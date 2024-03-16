@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href={%static "assets/bootstrap/css/bootstrap.min.css" %}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
+    <link rel="stylesheet" href={%static "assets/css/baguetteBox.min.css" %}>
+    <link rel="stylesheet" href={%static "assets/css/vanilla-zoom.min.css" %}>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-body clean-navbar navbar-light">
+        <div class="container"><img src="{%static "logo.png" %}" style="width: 100px;"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="start.html">START THREAT MODELLING</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About SEANCE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+         {% block content1 %}
+         {% endblock %}
+    </main>
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row"><div class="col-sm-3 col-xl-4">
+    <h5>Get started</h5>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="start.html">Start Threat Modelling</a></li>
+        <li><a href="about.html">Learn more about Seance Framework</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+                <div class="col-sm-3 col-lg-8 col-xl-7" style="flex:0 0 auto;width:849px;color:white;">
+                    <h5>About SEANCE Framework</h5>
+                    <p>SEANCE is a threat modelling framework tailored for micro businesses. It was developed by Etkin Getir as part of his MSc in Computer Science dissertation at the University of Essex Online. Read more about the framework <u><a href="about.html">here</a></u>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 Etkin Getir</p>
+        </div>
+    </footer>
+    <script src="../static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/assets/js/baguetteBox.min.js"></script>
+    <script src="../static/assets/js/vanilla-zoom.js"></script>
+    <script src="../static/assets/js/theme.js"></script>
+</body>
+
+</html>
