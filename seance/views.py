@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-from .helpers import app_counter, answers
-from .models import MainQuestions, SubQuestions
+from . import helpers
+from .helpers import new_user, tracker
+from .models import Questions, Users, Answers
 
 
 def index(request):
@@ -25,99 +26,86 @@ def seance_layer1(request):
     if request.method == 'POST':
         pass
     else:
-        questions = MainQuestions.objects.filter(section=1).order_by("qid")
-        subquestions = SubQuestions.objects.filter(section=1).order_by("sqid")
+        # questions = MainQuestions.objects.filter(section=1).order_by("qid")
+        # subquestions = SubQuestions.objects.filter(section=1).order_by("sqid")
         return render(request, 'seance-layer1.html', {
             'questions': questions, 'subquestions': subquestions
         })
 
 
-def question_view(request, question_id=None):
-    questions = MainQuestions.objects.filter(section=1).order_by("qid")
-    subquestions = SubQuestions.objects.filter(section=1).order_by("sqid")
-    for q in questions:
-        question_id = question_id.append(q.qid)
-
-    for id in question_id:
-        question = MainQuestions.objects.get(id=id)
-        if request.method == 'POST':
-            answer = request.POST.get('answer')
-            # Append to answers DB
-            # Determine next question based on the answer
-            next_question = question.follow_up_questions.filter(condition=answer.upper()).first()
-            if next_question:
-                return redirect('question', question_id=next_question.id)
+def layer2(request):
+    if request.method == 'GET':
+        tracker.questions = [] # Empties the list at the start of each iteration
+        tracker.user_id = new_user()
+        query = Questions.objects.filter(section=1).order_by("qid")
+        for q in query:
+            tracker.questions.append(q)
+            tracker.keys.append(str(q.qid))
+        return render(request, 'layer1.html', {'questions': tracker.questions})
+    else:
+        query = Questions.objects.filter(section=1).order_by("qid")
+        for q in query:
+            tracker.questions.append(q)
+            tracker.keys.append(str(q.qid))
+        form_data = dict(request.POST)
+        for key in tracker.keys:
+            answer = form_data[key]
+            if tracker.questions[int(key)].qtype == 2:
+                value = 0.1 * int(answer)
             else:
-                return redirect('complete')  # Redirect to a completion page or the next section
-
-    return render(request, 'layer1-questions.html', {'question': question})
-
-
-def layer1_questions_old(request, question_id=None):
-    global question_ids
-    if question_id is None:
-        app_counter.section = 1
-        app_counter.question = 0
-        app_counter.question_set = MainQuestions.objects.filter(section=1).order_by("qid")
-        for q in app_counter.question_set:
-            question_ids = question_ids.append(q.qid)
-        qid = question_ids[app_counter.question]
-        question = app_counter.question_set[id].question
-        #question = MainQuestions.objects.filter(section=1).first()  # Start with the first main question
-    else:
-        question = MainQuestions.objects.get(id=question_id)
-
-    if request.method == 'POST':
-        answer = request.POST.get('answer')
-
-        # Determine next question based on the answer
-        app_counter.question += 1
-        id = question_ids[app_counter.question]
-        next_question = app_counter.question_set[id].question
-        if next_question:
-            return redirect('question_view', question_id=next_question.id)
-        else:
-            return redirect('complete')  # Redirect to a completion page or the next section
-
-    return render(request, 'layer1-questions.html', {'question': question})
-
-
-def layer1_questions(request, question_id=None):
-    if question_id is None:
-        app_counter.section = 1
-        app_counter.questions = MainQuestions.objects.filter(section=1).order_by("qid")
-        app_counter.current = app_counter.questions.pop(0)
-    else:
-        return render(request, 'index.html', )
-
-    if request.method == 'POST':
-        answer = request.POST.get('answer')
-        if app_counter.current.children:
-            if app_counter.current.qtype == 2:
                 if answer == "Yes":
-                    app_counter.subquestions = SubQuestions.objects.filter(parent_id=app_counter.current.quid)
-                    next_question = app_counter.subquestions.pop(0)
-                    return redirect('layer1-questions', question_id=next_question.qid)
-            elif app_counter.current.qtype == 3:
-                if answer == "No":
-                    app_counter.subquestions = SubQuestions.objects.filter(parent_id=app_counter.current.quid)
-                    next_question = app_counter.subquestions.pop(0)
-                    return redirect('layer1-questions', question_id=next_question.qid)
-            elif app_counter.current.qtype == 4:
-                pass
-            elif app_counter.current.qtype == 5:
-                pass
+                    value = tracker.questions[key].value
+                else:
+                    value = 1 - tracker.questions[key].value
+            #record = Answers(aqid=key, value=value, section=1, user=tracker.user_id)
+            #record.save()
+        # For debugging purposes:
+        #answers = []
+        #query2 = Answers.objects.filter(section=1, user=tracker.user_id).order_by("aqid")
+        #for q in query2:
+        #    answers.append(q)
+    return render(request, 'complete.html', {'answers': tracker.questions})
+
+
+def layer1(request):
+    keys, answers, questions, qdict = [], {}, [], {}
+    if request.method  == 'GET':
+        new_user = Users()  # A new anonymous user is created to track the answers of the users in case multiple users use the app simultaneously
+        new_user.save()
+        tracker.user_id = new_user.uid
+        query = Questions.objects.filter(section=1).order_by("qid")
+        for q in query:
+            questions.append(q)
+        return render(request, 'layer1.html', {'questions': questions})
+    else:
+        query = Questions.objects.filter(section=1).order_by("qid")
+        for q in query:
+            keys.append(q.qid)
+            qdict[q.qid] = q
+        form_data = dict(request.POST)
+        for key in keys:
+            answers[key] = form_data[str(key)]
+            #answers.append(form_data[str(key)])
+
+            if qdict[key].qtype == 2:
+                response = answers.get(key)
+                value = 0.1 * int(response[0])
+                record = Answers(value=0, aqid=0, user_id=0, section=1)
+                record.save()
             else:
-                pass
+                if answers[key] == "Yes":
+                    value = qdict[key].value
+                    record = Answers(value=1, aqid=1, user_id=1, section=1)
+                    record.save()
+                else:
+                    value = 1 - qdict[key].value
+                    record = Answers(value=2, aqid=2, user_id=2, section=1)
+                    record.save()
 
-        # Determine next question based on the answer
+        # Record to the DB
+        # Step 1: Calculate the value
 
-        id = question_ids[app_counter.question]
-        next_question = app_counter.question_set[id].question
-        elif next_question:
-            return redirect('question_view', question_id=next_question.id)
-        else:
-            answers.subvalue.clear()
-            return redirect('complete')  # Redirect to a completion page or the next section
+        return render(request, 'complete.html', {'answers': answers})
 
-    return render(request, 'layer1-questions.html', {'question': question})
+def complete(request):
+    return render(request, 'complete.html')

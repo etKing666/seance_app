@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/migrations/0005_answers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/migrations/0006_mainquestions_children_subquestions_children.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/css/seance-custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/layer1-questions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/seance-layer1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/start.html" afterDir="false" />
+    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Application logic">
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0007_questions_alter_answers_qid_delete_subquestions_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0008_rename_qid_answers_aqid.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0009_users.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0010_answers_user_alter_users_uid.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/templates/layer1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6659cf06-102a-408c-87d5-605c30f91a24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6659cf06-102a-408c-87d5-605c30f91a24.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/layer1-questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
@@ -42,9 +40,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2dd12vcb6Wtg7RcZIFFXfO3kFs4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -63,7 +61,7 @@
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/etking/PycharmProjects/TM_app/seance/templates",
+    "last_opened_file_path": "/Users/etking/PycharmProjects/TM_app",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -127,7 +125,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710322937104</updated>
-      <workItem from="1710322941251" duration="47604000" />
+      <workItem from="1710322941251" duration="47957000" />
+      <workItem from="1710798495338" duration="292000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -137,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710627571280</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Application logic">
+      <option name="closed" value="true" />
+      <created>1710745694153</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710745694153</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +153,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Application logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Application logic" />
   </component>
 </project>

@@ -12,6 +12,6 @@ urlpatterns = [
     path('index.html', views.index),
     path('start.html', views.start),
     path('seance-layer1.html', views.seance_layer1),
-    path('layer1-questions/', views.layer1_questions, name='layer1-questions'),
-    path('layer1-questions/<int:id>/', views.layer1_questions, name='layer1-questions'),
+    path('layer1/', views.layer1, name='layer1'),
+    path('complete.html', views.complete, name='complete')
 ]
