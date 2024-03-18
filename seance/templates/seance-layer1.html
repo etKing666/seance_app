@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+    <section class="clean-block container-fluid" style="margin-top:200px;width:1400px;padding-right:200px;padding-left:200px">
+        <h2 class="text-info" style="text-align:center;margin-bottom:15px">Layer 1: (your)Self</h2>
+            {% for question in questions %}
+                <p><b>{{ question.question }}</b></p>
+                {% if question.qtype != 1 %}
+                    {% for subquestion in subquestions %}
+                        {% if question.qid == subquestion.parent_id %}
+                            <ul>
+                                <li>{{ subquestion.question }}</li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        <button class="btn btn-outline-primary btn-lg horizontal-centered" type="button" onclick="location.href='seance-layer1.html'">Start Threat Modelling</button>
+    </section>
+{% endblock %}

@@ -4,64 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TM_app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TM_app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TM_app/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TM_app/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TM_app/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TM_app/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/migrations/0002_subquestions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/about1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/about2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/css/baguetteBox.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/css/vanilla-zoom.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/fonts/Simple-Line-Icons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/fonts/Simple-Line-Icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/fonts/Simple-Line-Icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/fonts/Simple-Line-Icons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/fonts/Simple-Line-Icons.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/fonts/simple-line-icons.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/img/SEANCE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/img/avatars/avatar1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/img/avatars/avatar2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/img/avatars/avatar3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/img/scenery/image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/img/scenery/image4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/img/scenery/image5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/img/scenery/image6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/img/tech/image4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/js/baguetteBox.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/js/theme.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/assets/js/vanilla-zoom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/homepage1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/homepage2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/layout backup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/favicon.png" afterDir="false" />
+    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0005_answers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0006_mainquestions_children_subquestions_children.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/static/assets/css/seance-custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/templates/layer1-questions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/templates/seance-layer1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/templates/start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -103,7 +63,8 @@
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/etking/PycharmProjects/TM_app/static/images",
+    "last_opened_file_path": "/Users/etking/PycharmProjects/TM_app/seance/templates",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -115,8 +76,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/images" />
       <recent name="$PROJECT_DIR$/seance/templates" />
+      <recent name="$PROJECT_DIR$/static/images" />
       <recent name="$PROJECT_DIR$/seance/static" />
       <recent name="$PROJECT_DIR$/seance/static/assets" />
     </key>
@@ -166,8 +127,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710322937104</updated>
-      <workItem from="1710322941251" duration="25917000" />
+      <workItem from="1710322941251" duration="47604000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1710627571280</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710627571280</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,5 +145,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

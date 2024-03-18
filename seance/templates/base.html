@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
     <link rel="stylesheet" href={%static "assets/css/baguetteBox.min.css" %}>
     <link rel="stylesheet" href={%static "assets/css/vanilla-zoom.min.css" %}>
+    <link rel="stylesheet" href={%static "assets/css/seance-custom.css" %}>
 </head>
 
 <body>
@@ -18,10 +19,10 @@
         <div class="container"><img src="{%static "logo.png" %}" style="width: 100px;"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="start.html">START THREAT MODELLING</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About SEANCE</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{%  url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{%  url 'start' %}">START THREAT MODELLING</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{%  url 'about' %}">About SEANCE</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{%  url 'contact' %}">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -54,7 +55,7 @@
             </div>
         </div>
         <div class="footer-copyright">
-            <p>© 2024 Etkin Getir</p>
+            <p>© 2024 Etkin Getir. All rights reserved.</p>
         </div>
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
