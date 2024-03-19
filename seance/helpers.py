@@ -1,5 +1,4 @@
 import random, string
-from .models import Users
 
 """
 Helper functions and classes for the application.
@@ -13,6 +12,22 @@ class Tracker:
         self.user_id = 0
 
 
+class Answers:
+    """
+    A dataclass to store the answers of a user.
+    Structure: {'qid': [answer, value]}
+    """
+
+    def __init__(self):
+        self.layer1 = {}
+        self.layer2 = {}
+        self.layer3 = {}
+        self.layer4 = {}
+        self.layer5 = {}
+        self.layer6 = {}
+
+
+answers = Answers()
 tracker = Tracker()
 
 

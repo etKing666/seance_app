@@ -8,12 +8,12 @@
       {% csrf_token %}
     {% for question in questions %}
         <p><b>{{ question.question }}</b></p>
-        {% if question.qtype == 1 %}
+        {% if question.qtype == 5 %}
+          <p>Answer:<input type="number" name="{{ question.qid }}" required><br></p>
+        {% else %}
           <input type="radio" name="{{ question.qid }}" value="Yes" required> Yes<br>
           <input type="radio" name="{{ question.qid }}" value="No" required> No<br>
           <input type="radio" name="{{ question.qid }}" value="IDK" required> I don't know/I am not sure<br>
-        {% else %}
-          <p>Answer:<input type="number" name="{{ question.qid }}" required><br></p>
       {% endif %}
         </br>
     {% endfor %}

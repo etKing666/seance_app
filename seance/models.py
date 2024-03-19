@@ -20,25 +20,10 @@ class Questions(models.Model):
     value: The "YES" value of the question, meaning the value added to total when "Yes" is selected by the user.
     """
     qid = models.IntegerField(primary_key=True)
+    step = models.TextField(default="", blank=True)
     question = models.TextField()
     qtype = models.PositiveSmallIntegerField()
-    section = models.PositiveSmallIntegerField()
+    parent = models.BooleanField(default=False)
+    children = models.TextField(default="", blank=True)
+    section = models.PositiveSmallIntegerField(default=0, blank=True)
     value = models.IntegerField()
-
-
-class Users(models.Model):
-    """
-    A model to store anonymous user data
-    """
-    uid = models.AutoField(primary_key=True, unique=True)
-    datetime = models.DateTimeField(auto_now_add=True)
-
-
-class Answers(models.Model):
-    """
-    A model to record answers of the user.
-    """
-    aid = models.AutoField(primary_key=True)
-    aqid = models.IntegerField()
-    value = models.DecimalField(max_digits=3, decimal_places=2)
-    user = models.ForeignKey(Users, on_delete=models.CASCADE, default=None)
