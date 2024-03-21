@@ -10,6 +10,7 @@ urlpatterns = [
     path("contact.html", views.contact),
     path('index.html', views.index),
     path('start.html', views.start),
-    path('layer1/', views.layer1, name='layer1'),
+    path('questions/', views.questions, name="questions"),
+    path('questions/<str:next_one>/', views.questions, name='questions'),
     path('complete.html', views.complete, name='complete')
 ]

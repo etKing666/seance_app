@@ -2,14 +2,17 @@ import random, string
 
 """
 Helper functions and classes for the application.
+USE DATACLASS DECORATOR
 """
 
 
 class Tracker:
     def __init__(self):
-        self.questions = []
-        self.keys = []
-        self.user_id = 0
+        self.question_base = {}
+        self.steps = ["1.1", "1.2", "1.3", "1.4", "1.5", "2.1", "2.2"]
+        self.current = "1.1"
+        self.sections = {1: "(your)Self", 2: "(your) Employees", 3: "(your) Assets", 4: "(your) Network",
+                         5: "(your) Customers", 6: "(your) Environment"}
 
 
 class Answers:
@@ -31,8 +34,21 @@ answers = Answers()
 tracker = Tracker()
 
 
-def new_user():
-    new_user = Users()  # A new anonymous user is created to track the answers of the users in case multiple users use the app simultaneously
-    new_user.save()
-    user_id = new_user.uid
-    return user_id
+def next_step():
+    """
+    Calculates the next step in the given list of steps
+    """
+    key = tracker.current
+    index = tracker.steps.index(key)
+    index += 1
+    try:
+        next_step = tracker.steps[index]
+    except IndexError:
+        next_step = "0"
+    return next_step
+
+
+def reset():
+    tracker.current = tracker.steps[0]
+    return
+

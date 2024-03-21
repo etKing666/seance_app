@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .helpers import answers
+from .helpers import answers, tracker, next_step, reset
 from .models import Questions
 
 
@@ -19,33 +19,66 @@ def start(request):
     return render(request, 'start.html')
 
 
-def layer1(request):
+def questions(request):
     keys, questions, qdict = [], [], {}
     if request.method == 'GET':
-        query = Questions.objects.filter(section=1).order_by("qid")
+        reset() # Resets the pointer to the beginning of the question set
+
+        # Populating the global question base with all questions in the database
+        query = Questions.objects.all().order_by("qid")
+        for q in query:
+            tracker.question_base[q.qid] = q
+
+        # Getting all questions for the first step
+        query = Questions.objects.filter(step=tracker.current).order_by("qid")
         for q in query:
             questions.append(q)
-        return render(request, 'layer1.html', {'questions': questions})
+        section = questions[0].section
+        return render(request, 'questions.html', {'questions': questions, 'section': section, 'section_name': tracker.sections[section]})
     else:
-        query = Questions.objects.filter(section=1).order_by("qid")
-        for q in query:
-            keys.append(q.qid)
-            qdict[q.qid] = q
         form_data = dict(request.POST)
+        del form_data['csrfmiddlewaretoken']  # Deleting csrfmiddlewaretoken from the dict
+        keys = list(form_data.keys())  # Getting the keys for all answered questions in this iteration
+
+        # Evaluating answers and the branching logic
         for key in keys:
             answer = form_data[str(key)][0]
-            if qdict[key].qtype == 5:
+            question = tracker.question_base[int(key)]
+            if question.qtype == 4:
                 # response = answers.get(key)
                 value = round((0.1 * int(answer)), 2)
                 answers.layer1[key] = [answer, value]
             else:
+                if question.parent:
+                    if question.qtype == 2 and answer == "Yes": # Branching on yes
+                        query = Questions.objects.filter(step=question.children).order_by("qid")
+                        for q in query:
+                            questions.append(q)
+                        section = questions[0].section
+                        return render(request, 'questions.html', {'questions': questions, 'section': section, 'section_name': tracker.sections[section]})
+                    if question.qtype == 3 and answer == "No": # Branching on no
+                        query = Questions.objects.filter(step=question.children).order_by("qid")
+                        for q in query:
+                            questions.append(q)
+                        section = questions[0].section
+                        return render(request, 'questions.html', {'questions': questions, 'section': section, 'section_name': tracker.sections[section]})
                 if answer == "Yes":
-                    value = qdict[key].value
+                    value = question.value
                     answers.layer1[key] = [answer, value]
                 else:
-                    value = 1 - qdict[key].value
+                    value = 1 - question.value
                     answers.layer1[key] = [answer, value]
-        return render(request, 'complete.html', {'answers': answers.layer1})
+        tracker.current = next_step()  # Moving the pointer to the next step
+
+        # Retrieving all questions for the next step
+        query = Questions.objects.filter(step=tracker.current).order_by("qid")
+        for q in query:
+            questions.append(q)
+        if questions:
+            section = questions[0].section
+            return render(request, 'questions.html', {'questions': questions, 'section': section, 'section_name': tracker.sections[section]})
+        else:
+            return render(request, 'complete.html', {'answers': answers.layer1})
 
 
 def complete(request):
