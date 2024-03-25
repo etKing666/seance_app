@@ -27,3 +27,4 @@ class Questions(models.Model):
     children = models.TextField(default="", blank=True)
     section = models.PositiveSmallIntegerField(default=0, blank=True)
     value = models.IntegerField()
+    factor = models.PositiveSmallIntegerField(default=1)

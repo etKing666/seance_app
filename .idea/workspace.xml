@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Works with database, questions broken down into steps">
-      <change afterPath="$PROJECT_DIR$/seance/templates/questions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/views backup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0013_questions_factor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/questions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
@@ -33,6 +37,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -66,6 +73,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/xb/r3swjv4142j_hz36jmf0zxq00000gn/T/qodana_output/qodana.sarif.json" />
+        <option name="reportGuid" value="c43fdf83-350e-4329-ac5c-e8626bae7f1e" />
+        <option name="reportName" value="TMapp/qodana/2024-03-25" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/private/var/folders/xb/r3swjv4142j_hz36jmf0zxq00000gn/T/qodana_output/qodana.sarif.json" reportGuid="c43fdf83-350e-4329-ac5c-e8626bae7f1e" reportId="TMapp/qodana/2024-03-25" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/seance/templates" />
@@ -122,7 +146,7 @@
       <updated>1710322937104</updated>
       <workItem from="1710322941251" duration="47957000" />
       <workItem from="1710798495338" duration="292000" />
-      <workItem from="1710882452114" duration="18487000" />
+      <workItem from="1710882452114" duration="54898000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -148,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710884932178</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Works with database, questions broken down into steps">
+      <option name="closed" value="true" />
+      <created>1711054252885</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711054252885</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

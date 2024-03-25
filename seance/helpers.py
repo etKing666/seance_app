@@ -1,4 +1,5 @@
-import random, string
+import random, string, re
+from dataclasses import dataclass
 
 """
 Helper functions and classes for the application.
@@ -9,8 +10,8 @@ USE DATACLASS DECORATOR
 class Tracker:
     def __init__(self):
         self.question_base = {}
-        self.steps = ["1.1", "1.2", "1.3", "1.4", "1.5", "2.1", "2.2"]
-        self.current = "1.1"
+        self.steps = []
+        self.current = "0.0"  # Initiates at zero
         self.sections = {1: "(your)Self", 2: "(your) Employees", 3: "(your) Assets", 4: "(your) Network",
                          5: "(your) Customers", 6: "(your) Environment"}
 
@@ -30,8 +31,33 @@ class Answers:
         self.layer6 = {}
 
 
+@dataclass
+class Scores:
+    """
+    A dataclass to hold the score of layers
+    """
+    layer1: float = 0
+    layer2: float = 0
+    layer3: float = 0
+    layer4: float = 0
+    layer5: float = 0
+    layer6: float = 0
+    overall: float = 0
+
+
 answers = Answers()
 tracker = Tracker()
+scores = Scores()
+
+
+def main_steps(all_steps):
+    """
+    Extracts main steps from a list of all steps and records in to tracker.steps list
+    """
+    for step in all_steps:
+        if re.fullmatch("[0-9]\.[0-9]", step):
+            tracker.steps.append(step)
+    return
 
 
 def next_step():
@@ -44,11 +70,49 @@ def next_step():
     try:
         next_step = tracker.steps[index]
     except IndexError:
-        next_step = "0"
+        next_step = None  # Which returns no more questions
     return next_step
 
 
+def record_answers(key, answer, value):
+    """
+    Records the answers to appropriate dictionary in answers
+    """
+    layer = int(str(key)[:1])  # Determines the layer the answer belongs to
+    if layer == 1:
+        answers.layer1[key] = [answer, value]
+        scores.layer1 += value
+        scores.layer1 = round(scores.layer1, 2)
+    elif layer == 2:
+        answers.layer2[key] = [answer, value]
+        scores.layer2 += value
+        scores.layer2 = round(scores.layer2, 2)
+    elif layer == 3:
+        answers.layer3[key] = [answer, value]
+        scores.layer3 += value
+        scores.layer3 = round(scores.layer3, 2)
+    elif layer == 4:
+        answers.layer4[key] = [answer, value]
+        scores.layer4 += value
+        scores.layer4 = round(scores.layer4, 2)
+    elif layer == 5:
+        answers.layer5[key] = [answer, value]
+        scores.layer5 += value
+        scores.layer5 = round(scores.layer5, 2)
+    elif layer == 6:
+        answers.layer6[key] = [answer, value]
+        scores.layer6 += value
+        scores.layer6 = round(scores.layer6, 2)
+    else:
+        raise ValueError
+    return
+
+
 def reset():
+    """
+    Resets the tracker and scores when the user starts the questionnaire from scratch
+    """
     tracker.current = tracker.steps[0]
+    scores.layer1, scores.layer2, scores.layer3, scores.layer4, scores.layer5, scores.layer6, scores.overall = 0, 0, 0, 0, 0, 0, 0
     return
 
