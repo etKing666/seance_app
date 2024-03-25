@@ -3,21 +3,23 @@
 
 {% block body %}
 <section class="clean-block container-fluid" style="margin-top:200px;width:1400px;padding-right:200px;padding-left:200px">
-    <h2 class="text-info" style="text-align:center;margin-bottom:15px">Layer {{ section }}: {{ section_name }}</h2>
-    <form method="post" id="form1">
-      {% csrf_token %}
-    {% for question in questions %}
-        <p><b>{{ question.question }}</b></p>
-        {% if question.qtype == 4 %}
-          <p>Answer:<input type="number" name="{{ question.qid }}" required><br></p>
-        {% else %}
-          <input type="radio" name="{{ question.qid }}" value="Yes" required> Yes<br>
-          <input type="radio" name="{{ question.qid }}" value="No" required> No<br>
-          <input type="radio" name="{{ question.qid }}" value="IDK" required> I don't know/I am not sure<br>
-      {% endif %}
-        </br>
-    {% endfor %}
-    <button class="btn btn-outline-primary btn-lg horizontal-centered" type="submit">Next ></button>
-    </form>
+    <div >
+        <h2 class="text-info" style="text-align:center;margin-bottom:15px">Layer {{ section }}: {{ section_name }}</h2>
+        <form method="post" id="form1">
+          {% csrf_token %}
+        {% for question in questions %}
+            <p><b>{{ question.question }}</b></p>
+            {% if question.qtype == 4 %}
+              <p>Answer:<input type="number" name="{{ question.qid }}" required><br></p>
+            {% else %}
+              <input type="radio" name="{{ question.qid }}" value="Yes" required> Yes<br>
+              <input type="radio" name="{{ question.qid }}" value="No" required> No<br>
+              <input type="radio" name="{{ question.qid }}" value="IDK" required> I don't know/I am not sure<br>
+          {% endif %}
+            </br>
+        {% endfor %}
+        <button class="btn btn-outline-primary btn-lg horizontal-centered" type="submit">Next ></button>
+        </form>
+    </div>
 </section>
 {% endblock %}

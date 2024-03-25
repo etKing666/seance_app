@@ -28,3 +28,14 @@ class Questions(models.Model):
     section = models.PositiveSmallIntegerField(default=0, blank=True)
     value = models.IntegerField()
     factor = models.PositiveSmallIntegerField(default=1)
+
+
+class Suggestions(models.Model):
+    """
+    Suggestions for the issues identified in the user's organisation.
+    """
+    sid = models.IntegerField(primary_key=True)
+    rquid = models.ForeignKey(Questions, on_delete=models.CASCADE)
+    issue = models.TextField()
+    action = models.TextField()
+    section = models.PositiveSmallIntegerField()

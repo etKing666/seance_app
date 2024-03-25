@@ -20,8 +20,10 @@ def start(request):
 
 
 def questions(request):
-    keys, questions, qdict, steps = [], [], {}, []
+    keys, questions, steps = [], [], []
     if request.method == 'GET':
+        tracker.question_base = {}
+        tracker.steps = []
         # Populating the global variables
         query = Questions.objects.all().order_by("qid")
         for q in query:
@@ -75,16 +77,16 @@ def questions(request):
         tracker.current = next_step()  # Moving the pointer to the next step
 
         # Retrieving all questions for the next step
-        query = Questions.objects.filter(step=tracker.current).order_by("qid")
-        for q in query:
-            questions.append(q)
-        if questions:
-            section = questions[0].section
-            return render(request, 'questions.html', {'questions': questions, 'section': section, 'section_name': tracker.sections[section]})
-        else:
-            # Calculates the average score
-            scores.overall = round((sum([scores.layer1, scores.layer2, scores.layer3, scores.layer4, scores.layer5, scores.layer6]) / 6), 2)
-            return render(request, 'complete.html', {'answers': answers, 'sections': tracker.sections, 'scores': scores})
+        if tracker.current is not None:
+            query = Questions.objects.filter(step=tracker.current).order_by("qid")
+            for q in query:
+                questions.append(q)
+            if questions:
+                section = questions[0].section
+                return render(request, 'questions.html', {'questions': questions, 'section': section, 'section_name': tracker.sections[section]})
+        # Calculates the average score
+        scores.overall = round((sum([scores.layer1, scores.layer2, scores.layer3, scores.layer4, scores.layer5, scores.layer6]) / 6), 2)
+        return render(request, 'complete.html', {'answers': answers, 'sections': tracker.sections, 'scores': scores})
 
 
 def complete(request):

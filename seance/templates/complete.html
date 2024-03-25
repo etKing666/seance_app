@@ -3,7 +3,8 @@
 
 {% block body %}
 <section class="clean-block container-fluid" style="margin-top:200px;width:1400px;padding-right:200px;padding-left:200px">
-    <h2 class="text-info" style="text-align:center;margin-bottom:15px">Here are your results</h2>
+    <div>
+        <h2 class="text-info" style="text-align:center;margin-bottom:15px">Here are your results</h2>
         <h4>Layer 1: {{ sections.1 }}</h4>
         <p>{{ answers.layer1 }}</p>
         <p>You average cyber security risk rating: <b>{{ scores.layer1 }}/5</b></p>
@@ -22,18 +23,23 @@
         <h4>Layer 6: {{ sections.6 }}</h4>
         <p>{{ answers.layer6 }}</p>
         <p>You average cyber security risk rating: <b>{{ scores.layer6 }}/5</b></p>
-        <h4 style="text-align:center" class="bg-primary bg-gradient">Your overall cyber security risk rating: {{ scores.overall }} / 5 </h4>
         {% if scores.overall < 1  %}
-            <h4 style="text-align:center" class="bg-success">Very low risk</h4>
+            <h4 style="text-align:center" class="bg-success .text-body-emphasis">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                Very low risk</h4>
         {% elif scores.overall >= 1 and scores.overall < 2 %}
-            <h4 style="text-align:center" class="bg-success-subtle">Low risk</h4>
+            <h4 style="text-align:center" class="bg-success-subtle">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                Low risk</h4>
         {% elif scores.overall >= 2 and scores.overall < 3 %}
-            <h4 style="text-align:center" class="bg-warning">Moderate risk</h4>
+            <h4 style="text-align:center" class="bg-warning .text-body-emphasis">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                Moderate risk</h4>
         {% elif scores.overall >= 3 and scores.overall < 4 %}
-            <h4 style="text-align:center" class="bg-danger-subtle">High risk</h4>
+            <h4 style="text-align:center" class="bg-danger-subtle">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                High risk</h4>
         {% elif scores.overall >= 4 %}
-            <h4 style="text-align:center" class="bg-danger">Very high risk</h4>
+            <h4 style="text-align:center" class="bg-danger .text-body-emphasis">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                Very high risk</h4>
         {% endif %}
-        <button class="btn btn-outline-primary btn-lg horizontal-centered" type="button" onclick="location.href='seance-layer1.html'">Start Threat Modelling</button>
+        <button class="btn btn-outline-primary btn-lg horizontal-centered" type="button" onclick="location.href='questions.html'">Start Threat Modelling</button>
+    </div>
 </section>
 {% endblock %}
