@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Improved results page, restarts every second iteration (have to fix), added calculation logic">
-      <change afterPath="$PROJECT_DIR$/seance/migrations/0014_suggestions.py" afterDir="false" />
+    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Fixed calculation.">
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0015_remove_suggestions_issue.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0016_alter_suggestions_rquid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6659cf06-102a-408c-87d5-605c30f91a24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6659cf06-102a-408c-87d5-605c30f91a24.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/templates/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/templates/questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/questions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +145,7 @@
       <updated>1710322937104</updated>
       <workItem from="1710322941251" duration="47957000" />
       <workItem from="1710798495338" duration="292000" />
-      <workItem from="1710882452114" duration="61462000" />
+      <workItem from="1710882452114" duration="81756000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -184,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711387123204</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed calculation.">
+      <option name="closed" value="true" />
+      <created>1711402971838</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711402971838</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +207,7 @@
     <MESSAGE value="Application logic" />
     <MESSAGE value="Works with database, questions broken down into steps" />
     <MESSAGE value="Improved results page, restarts every second iteration (have to fix), added calculation logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved results page, restarts every second iteration (have to fix), added calculation logic" />
+    <MESSAGE value="Fixed calculation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed calculation." />
   </component>
 </project>

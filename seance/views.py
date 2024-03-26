@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .helpers import answers, tracker, next_step, reset, record_answers, main_steps, scores
-from .models import Questions
+from .helpers import answers, tracker, next_step, reset, record_answers, main_steps, scores, advices, get_suggestions
+from .models import Questions, Suggestions
 
 
 def index(request):
@@ -31,6 +31,8 @@ def questions(request):
             steps.append(q.step)  # Retrieves the steps of all questions, includes duplicate steps
         steps = list(dict.fromkeys(steps))  # Removes the duplicates
         main_steps(steps)  # Extracts main steps from the list of all steps and stores it to the global tracker list
+        query = Suggestions.objects.filter(rquid=10200)
+        tracker.suggestion_base = query
         reset()  # Resets the pointer to the beginning of the question set
 
         # Getting all questions for the first step
@@ -50,7 +52,7 @@ def questions(request):
             question = tracker.question_base[int(key)]
             if question.qtype == 4:
                 value = round(((0.1 * int(answer)) / question.factor * 5), 2)
-                record_answers(key, answer, value)
+                record_answers(key, answer, value, )
             else:
                 if question.parent:
                     if question.qtype == 2 and answer == "Yes": # Branching on yes
@@ -83,10 +85,15 @@ def questions(request):
                 questions.append(q)
             if questions:
                 section = questions[0].section
-                return render(request, 'questions.html', {'questions': questions, 'section': section, 'section_name': tracker.sections[section]})
+                return render(request, 'questions.html', {
+                    'questions': questions, 'section': section, 'section_name': tracker.sections[section],
+                })
         # Calculates the average score
         scores.overall = round((sum([scores.layer1, scores.layer2, scores.layer3, scores.layer4, scores.layer5, scores.layer6]) / 6), 2)
-        return render(request, 'complete.html', {'answers': answers, 'sections': tracker.sections, 'scores': scores})
+
+        # Gets suggestions
+        # get_suggestions()
+        return render(request, 'complete.html', {'answers': answers, 'sections': tracker.sections, 'scores': scores, 'suggestions': advices})
 
 
 def complete(request):

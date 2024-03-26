@@ -5,41 +5,73 @@
 <section class="clean-block container-fluid" style="margin-top:200px;width:1400px;padding-right:200px;padding-left:200px">
     <div>
         <h2 class="text-info" style="text-align:center;margin-bottom:15px">Here are your results</h2>
-        <h4>Layer 1: {{ sections.1 }}</h4>
-        <p>{{ answers.layer1 }}</p>
-        <p>You average cyber security risk rating: <b>{{ scores.layer1 }}/5</b></p>
-        <h4>Layer 2: {{ sections.2 }}</h4>
-        <p>{{ answers.layer2 }}</p>
+        <h4 class="bg-info bg-gradient">Layer 1: {{ sections.1 }}</h4>
+        <p>You average cyber security risk rating for this layer: <b>{{ scores.layer1 }}/5</b></p>
+        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        {% for entry in suggestions.layer1 %}
+        <ul>
+            <li>{{ entry|linebreaks }}</li>
+        </ul>
+        {% endfor %}
+        <h4 class="bg-info bg-gradient">Layer 2: {{ sections.2 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer2 }}/5</b></p>
-        <h4>Layer 3: {{ sections.3 }}</h4>
-        <p>{{ answers.layer3 }}</p>
+        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        {% for entry in suggestions.layer2 %}
+        <ul>
+            <li>{{ entry|linebreaks }}</li>
+        </ul>
+        {% endfor %}
+        <h4 class="bg-info bg-gradient">Layer 3: {{ sections.3 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer3 }}/5</b></p>
-        <h4>Layer 4: {{ sections.4 }}</h4>
-        <p>{{ answers.layer4 }}</p>
+        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        {% for entry in suggestions.layer3 %}
+        <ul>
+            <li>{{ entry|linebreaks }}</li>
+        </ul>
+        {% endfor %}
+        <h4 class="bg-info bg-gradient">Layer 4: {{ sections.4 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer4 }}/5</b></p>
-        <h4>Layer 5: {{ sections.5 }}</h4>
-        <p>{{ answers.layer5 }}</p>
+        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        {% for entry in suggestions.layer4 %}
+        <ul>
+            <li>{{ entry|linebreaks }}</li>
+        </ul>
+        {% endfor %}
+        <h4 class="bg-info bg-gradient">Layer 5: {{ sections.5 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer5 }}/5</b></p>
-        <h4>Layer 6: {{ sections.6 }}</h4>
-        <p>{{ answers.layer6 }}</p>
+        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        {% for entry in suggestions.layer5 %}
+        <ul>
+            <li>{{ entry|linebreaks }}</li>
+        </ul>
+        {% endfor %}
+        <h4 class="bg-info bg-gradient">Layer 6: {{ sections.6 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer6 }}/5</b></p>
+        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        {% for entry in suggestions.layer6 %}
+        <ul>
+            <li>{{ entry|linebreaks }}</li>
+        </ul>
+        {% endfor %}
         {% if scores.overall < 1  %}
             <h4 style="text-align:center" class="bg-success .text-body-emphasis">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
-                Very low risk</h4>
+                VERY LOW RISK</h4>
         {% elif scores.overall >= 1 and scores.overall < 2 %}
             <h4 style="text-align:center" class="bg-success-subtle">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
-                Low risk</h4>
+                LOW RISK</h4>
         {% elif scores.overall >= 2 and scores.overall < 3 %}
             <h4 style="text-align:center" class="bg-warning .text-body-emphasis">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
-                Moderate risk</h4>
+                MODERATE RISK</h4>
         {% elif scores.overall >= 3 and scores.overall < 4 %}
             <h4 style="text-align:center" class="bg-danger-subtle">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
-                High risk</h4>
+                HIGH RISK</h4>
         {% elif scores.overall >= 4 %}
             <h4 style="text-align:center" class="bg-danger .text-body-emphasis">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
-                Very high risk</h4>
+                VERY HIGH RISK</h4>
         {% endif %}
-        <button class="btn btn-outline-primary btn-lg horizontal-centered" type="button" onclick="location.href='questions.html'">Start Threat Modelling</button>
+        <div class="text-center">
+            <button class="btn btn-outline-primary btn-lg" type="button" onclick="location.href='questions.html'">Download report (.pdf)</button>
+        </div>
     </div>
 </section>
 {% endblock %}

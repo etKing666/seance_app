@@ -35,7 +35,6 @@ class Suggestions(models.Model):
     Suggestions for the issues identified in the user's organisation.
     """
     sid = models.IntegerField(primary_key=True)
-    rquid = models.ForeignKey(Questions, on_delete=models.CASCADE)
-    issue = models.TextField()
+    rquid = models.IntegerField()
     action = models.TextField()
     section = models.PositiveSmallIntegerField()
