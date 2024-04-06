@@ -8,129 +8,123 @@
         <h4 class="bg-info bg-gradient bg-opacity-50">Layer 1: {{ sections.1 }}</h4>
         <p>You average cyber security risk rating for this layer: <b>{{ scores.layer1 }}/5</b></p>
         <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
-        <div class="accordion" id="accordion-layer1">
         {% for entry in suggestions.layer1 %}
+            <div class="accordion" id="accordion-layer1">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="header{{ entry.sid }}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ entry.sid }}" aria-expanded="false" aria-controls="collapse{{ entry.sid }}">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse.show" data-bs-target="#{{ entry.sid }}" aria-expanded="false" aria-controls={{ entry.sid }}>
                         {{ entry.risk }}
                         </button>
                     </h2>
-                    <div id="collapse{{ entry.sid }}" class="accordion-collapse collapse" data-bs-parent="#accordion-layer1" aria-labelledby="header{{ entry.sid }}">
+                    <div id={{ entry.sid }} class="accordion-collapse collapse show" data-bs-parent="#accordion-layer1">
                         <div class="accordion-body">
                             <p>{{ entry.action|linebreaks }}</p>
                             <p>{{ entry.sources|safe|linebreaks }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
         {% endfor %}
-        </div>
-        <br>
         <h4 class="bg-info bg-gradient bg-opacity-50">Layer 2: {{ sections.2 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer2 }}/5</b></p>
         <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
-        <div class="accordion" id="accordion-layer2">
         {% for entry in suggestions.layer2 %}
+            <div class="accordion" id="accordion-layer2">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="header{{ entry.sid }}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ entry.sid }}" aria-expanded="false" aria-controls="collapse{{ entry.sid }}">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse.show" data-bs-target="#{{ entry.sid }}" aria-expanded="false" aria-controls={{ entry.sid }}>
                         {{ entry.risk }}
                         </button>
                     </h2>
-                    <div id="collapse{{ entry.sid }}" class="accordion-collapse collapse" data-bs-parent="#accordion-layer2" aria-labelledby="header{{ entry.sid }}">
+                    <div id={{ entry.sid }} class="accordion-collapse collapse show" data-bs-parent="#accordion-layer2">
                         <div class="accordion-body">
                             <p>{{ entry.action|linebreaks }}</p>
                             <p>{{ entry.sources|safe|linebreaks }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
         {% endfor %}
-        </div>
-        <br>
         <h4 class="bg-info bg-gradient bg-opacity-50">Layer 3: {{ sections.3 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer3 }}/5</b></p>
         <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
-        <div class="accordion" id="accordion-layer3">
         {% for entry in suggestions.layer3 %}
+            <div class="accordion" id="accordion-layer3">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="header{{ entry.sid }}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ entry.sid }}" aria-expanded="false" aria-controls="collapse{{ entry.sid }}">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse.show" data-bs-target="#{{ entry.sid }}" aria-expanded="false" aria-controls={{ entry.sid }}>
                         {{ entry.risk }}
                         </button>
                     </h2>
-                    <div id="collapse{{ entry.sid }}" class="accordion-collapse collapse" data-bs-parent="#accordion-layer3" aria-labelledby="header{{ entry.sid }}">
+                    <div id={{ entry.sid }} class="accordion-collapse collapse show" data-bs-parent="#accordion-layer3">
                         <div class="accordion-body">
                             <p>{{ entry.action|linebreaks }}</p>
                             <p>{{ entry.sources|safe|linebreaks }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
         {% endfor %}
-        </div>
-        <br>
         <h4 class="bg-info bg-gradient bg-opacity-50">Layer 4: {{ sections.4 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer4 }}/5</b></p>
         <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
-        <div class="accordion" id="accordion-layer4">
         {% for entry in suggestions.layer4 %}
+            <div class="accordion" id="accordion-layer4">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="header{{ entry.sid }}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ entry.sid }}" aria-expanded="false" aria-controls="collapse{{ entry.sid }}">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse.show" data-bs-target="#{{ entry.sid }}" aria-expanded="false" aria-controls={{ entry.sid }}>
                         {{ entry.risk }}
                         </button>
                     </h2>
-                    <div id="collapse{{ entry.sid }}" class="accordion-collapse collapse" data-bs-parent="#accordion-layer4" aria-labelledby="header{{ entry.sid }}">
+                    <div id={{ entry.sid }} class="accordion-collapse collapse show" data-bs-parent="#accordion-layer4">
                         <div class="accordion-body">
                             <p>{{ entry.action|linebreaks }}</p>
                             <p>{{ entry.sources|safe|linebreaks }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
         {% endfor %}
-        </div>
-        <br>
         <h4 class="bg-info bg-gradient bg-opacity-50">Layer 5: {{ sections.5 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer5 }}/5</b></p>
         <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
-        <div class="accordion" id="accordion-layer5">
         {% for entry in suggestions.layer5 %}
+            <div class="accordion" id="accordion-layer5">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="header{{ entry.sid }}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ entry.sid }}" aria-expanded="false" aria-controls="collapse{{ entry.sid }}">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse.show" data-bs-target="#{{ entry.sid }}" aria-expanded="false" aria-controls={{ entry.sid }}>
                         {{ entry.risk }}
                         </button>
                     </h2>
-                    <div id="collapse{{ entry.sid }}" class="accordion-collapse collapse" data-bs-parent="#accordion-layer5" aria-labelledby="header{{ entry.sid }}">
+                    <div id={{ entry.sid }} class="accordion-collapse collapse show" data-bs-parent="#accordion-layer5">
                         <div class="accordion-body">
                             <p>{{ entry.action|linebreaks }}</p>
                             <p>{{ entry.sources|safe|linebreaks }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
         {% endfor %}
-        </div>
-        <br>
         <h4 class="bg-info bg-gradient bg-opacity-50">Layer 6: {{ sections.6 }}</h4>
         <p>You average cyber security risk rating: <b>{{ scores.layer6 }}/5</b></p>
         <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
-        <div class="accordion" id="accordion-layer6">
         {% for entry in suggestions.layer6 %}
+            <div class="accordion" id="accordion-layer6">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="header{{ entry.sid }}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ entry.sid }}" aria-expanded="false" aria-controls="collapse{{ entry.sid }}">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse.show" data-bs-target="#{{ entry.sid }}" aria-expanded="false" aria-controls={{ entry.sid }}>
                         {{ entry.risk }}
                         </button>
                     </h2>
-                    <div id="collapse{{ entry.sid }}" class="accordion-collapse collapse" data-bs-parent="#accordion-layer6" aria-labelledby="header{{ entry.sid }}">
+                    <div id={{ entry.sid }} class="accordion-collapse collapse show" data-bs-parent="#accordion-layer6">
                         <div class="accordion-body">
                             <p>{{ entry.action|linebreaks }}</p>
                             <p>{{ entry.sources|safe|linebreaks }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
         {% endfor %}
-        </div>
-        <br>
         {% if scores.overall < 1  %}
             <h4 style="text-align:center" class="bg-success .text-body-emphasis">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
                 VERY LOW RISK</h4>
@@ -157,5 +151,6 @@
         <div class="text-center">
             <button class="btn btn-outline-primary btn-lg" type="button" onclick="location.href='questions.html'">Download report (.pdf)</button>
         </div>
+    </div>
 </section>
 {% endblock %}

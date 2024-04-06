@@ -5,6 +5,7 @@
 <section class="clean-block container-fluid" style="margin-top:200px;width:1400px;padding-right:200px;padding-left:200px">
     <div >
         <h2 class="text-info" style="text-align:center;margin-bottom:15px">Layer {{ section }}: {{ section_name }}</h2>
+        <br>
         <form method="post" id="form1">
           {% csrf_token %}
         {% for question in questions %}

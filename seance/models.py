@@ -36,5 +36,7 @@ class Suggestions(models.Model):
     """
     sid = models.IntegerField(primary_key=True)
     rquid = models.IntegerField()
+    risk = models.TextField()
     action = models.TextField()
+    sources = models.TextField()
     section = models.PositiveSmallIntegerField()

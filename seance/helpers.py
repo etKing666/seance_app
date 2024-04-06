@@ -3,8 +3,7 @@ from dataclasses import dataclass
 from .models import Suggestions
 
 """
-Helper functions and classes for the application.
-USE DATACLASS DECORATOR
+Helper functions and dataclasses for the application.
 """
 
 
@@ -113,7 +112,7 @@ def record_answers(key, answer, value):
             query = Suggestions.objects.filter(rquid=key)
             if query.exists():
                 for q in query:
-                    advices.layer1.append(q.action)
+                    advices.layer1.append(q)
     elif layer == 2:
         answers.layer2[key] = [answer, value]
         scores.layer2 += value
@@ -122,7 +121,7 @@ def record_answers(key, answer, value):
             query = Suggestions.objects.filter(rquid=key)
             if query.exists():
                 for q in query:
-                    advices.layer2.append(q.action)
+                    advices.layer2.append(q)
     elif layer == 3:
         answers.layer3[key] = [answer, value]
         scores.layer3 += value
@@ -131,7 +130,7 @@ def record_answers(key, answer, value):
             query = Suggestions.objects.filter(rquid=key)
             if query.exists():
                 for q in query:
-                    advices.layer3.append(q.action)
+                    advices.layer3.append(q)
     elif layer == 4:
         answers.layer4[key] = [answer, value]
         scores.layer4 += value
@@ -140,7 +139,7 @@ def record_answers(key, answer, value):
             query = Suggestions.objects.filter(rquid=key)
             if query.exists():
                 for q in query:
-                    advices.layer4.append(q.action)
+                    advices.layer4.append(q)
     elif layer == 5:
         answers.layer5[key] = [answer, value]
         scores.layer5 += value
@@ -149,7 +148,7 @@ def record_answers(key, answer, value):
             query = Suggestions.objects.filter(rquid=key)
             if query.exists():
                 for q in query:
-                    advices.layer5.append(q.action)
+                    advices.layer5.append(q)
     elif layer == 6:
         answers.layer6[key] = [answer, value]
         scores.layer6 += value
@@ -158,7 +157,7 @@ def record_answers(key, answer, value):
             query = Suggestions.objects.filter(rquid=key)
             if query.exists():
                 for q in query:
-                    advices.layer6.append(q.action)
+                    advices.layer6.append(q)
     else:
         raise ValueError
     return

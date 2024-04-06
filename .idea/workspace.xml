@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Fixed calculation.">
-      <change afterPath="$PROJECT_DIR$/seance/migrations/0015_remove_suggestions_issue.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/migrations/0016_alter_suggestions_rquid.py" afterDir="false" />
+    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Added recommendations.">
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0017_suggestions_risk_suggestions_sources.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/static/sampleDFD.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/templates/complete2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6659cf06-102a-408c-87d5-605c30f91a24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6659cf06-102a-408c-87d5-605c30f91a24.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/static/assets/css/seance-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/seance/static/assets/css/seance-custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/static/assets/js/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/seance/static/assets/js/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/templates/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/questions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,39 +52,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/etking/PycharmProjects/TMapp/seance/templates",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/etking/PycharmProjects/TMapp/seance/templates&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="/private/var/folders/xb/r3swjv4142j_hz36jmf0zxq00000gn/T/qodana_output/qodana.sarif.json" />
-        <option name="reportGuid" value="c43fdf83-350e-4329-ac5c-e8626bae7f1e" />
-        <option name="reportName" value="TMapp/qodana/2024-03-25" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
+}</component>
   <component name="QodanaReportsService">
     <option name="descriptions">
       <ReportDescription localRun="true" path="/private/var/folders/xb/r3swjv4142j_hz36jmf0zxq00000gn/T/qodana_output/qodana.sarif.json" reportGuid="c43fdf83-350e-4329-ac5c-e8626bae7f1e" reportId="TMapp/qodana/2024-03-25" />
@@ -92,9 +81,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/seance/templates" />
+      <recent name="$PROJECT_DIR$/seance/static" />
       <recent name="$PROJECT_DIR$/seance" />
       <recent name="$PROJECT_DIR$/static/images" />
-      <recent name="$PROJECT_DIR$/seance/static" />
       <recent name="$PROJECT_DIR$/seance/static/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -145,7 +134,9 @@
       <updated>1710322937104</updated>
       <workItem from="1710322941251" duration="47957000" />
       <workItem from="1710798495338" duration="292000" />
-      <workItem from="1710882452114" duration="81756000" />
+      <workItem from="1710882452114" duration="98772000" />
+      <workItem from="1712401198042" duration="1000" />
+      <workItem from="1712405078960" duration="3123000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -195,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711402971838</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added recommendations.">
+      <option name="closed" value="true" />
+      <created>1711454071909</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711454071909</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +207,7 @@
     <MESSAGE value="Works with database, questions broken down into steps" />
     <MESSAGE value="Improved results page, restarts every second iteration (have to fix), added calculation logic" />
     <MESSAGE value="Fixed calculation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed calculation." />
+    <MESSAGE value="Added recommendations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added recommendations." />
   </component>
 </project>
