@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Added recommendations.">
-      <change afterPath="$PROJECT_DIR$/seance/migrations/0017_suggestions_risk_suggestions_sources.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/static/sampleDFD.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/complete2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6659cf06-102a-408c-87d5-605c30f91a24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6659cf06-102a-408c-87d5-605c30f91a24.xml" afterDir="false" />
+    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Accordion added on the results page.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/static/assets/css/seance-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/seance/static/assets/css/seance-custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/static/assets/js/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/seance/static/assets/js/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +126,8 @@
       <workItem from="1710798495338" duration="292000" />
       <workItem from="1710882452114" duration="98772000" />
       <workItem from="1712401198042" duration="1000" />
-      <workItem from="1712405078960" duration="3123000" />
+      <workItem from="1712405078960" duration="3503000" />
+      <workItem from="1712642117747" duration="850000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -194,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711454071909</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Accordion added on the results page.">
+      <option name="closed" value="true" />
+      <created>1712408914420</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712408914420</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +207,7 @@
     <MESSAGE value="Improved results page, restarts every second iteration (have to fix), added calculation logic" />
     <MESSAGE value="Fixed calculation." />
     <MESSAGE value="Added recommendations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added recommendations." />
+    <MESSAGE value="Accordion added on the results page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Accordion added on the results page." />
   </component>
 </project>

@@ -149,13 +149,13 @@
         {% endif %}
             <h4 class="bg-success bg-gradient text-white text-center">Data Flow Diagram of Your Organisation</h4>
         <div class="text-center position-relative">
-            <img class="img-fluid" src="{%static "sampleDFD.jpg" %}" style="width: 620px;" alt="Data Flow Diagram of your organisation"/>
+            <img class="img-fluid" src="{{ fname }}" style="width: 1000px;" alt="Data Flow Diagram of your organisation"/>
         </div>
         <p>This is the data flow diagram of your organisation based on your answers. Please note that this might
             not be an accurate and complete presentation of your organisation, but take it as a starting point to think
             about possible vulnerabilities in your data flows, network and systems.</p>
         <div class="text-center">
-            <button class="btn btn-outline-primary btn-lg" type="button" onclick="location.href='questions.html'">Download report (.pdf)</button>
+            <button class="btn btn-outline-primary btn-lg" type="submit" name="download_pdf" value="1">Download report (.pdf)</button>
         </div>
 </section>
 {% endblock %}

@@ -10,7 +10,7 @@ Helper functions and dataclasses for the application.
 class Tracker:
     def __init__(self):
         self.question_base = []
-        self.suggestion_base = {}
+        #self.suggestion_base = {}
         self.steps = []
         self.current = "0.0"  # Initiates at zero
         self.sections = {1: "(your)Self", 2: "(your) Employees", 3: "(your) Assets", 4: "(your) Network",

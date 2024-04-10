@@ -28,6 +28,7 @@ class Questions(models.Model):
     section = models.PositiveSmallIntegerField(default=0, blank=True)
     value = models.IntegerField()
     factor = models.PositiveSmallIntegerField(default=1)
+    dfd = models.BooleanField(default=False)
 
 
 class Suggestions(models.Model):
