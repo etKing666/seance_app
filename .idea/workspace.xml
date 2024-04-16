@@ -4,8 +4,88 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Accordion added on the results page.">
+    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="DFD integrated on the results page.">
+      <change afterPath="$PROJECT_DIR$/media/0MRCJX6Z309Q.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/1WGAHY9WYZBZ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/2FCPSG6UUS7Z.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/2MQQUV0EX8G5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/2PG96D0BB2N4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/498SLFNFYI2M.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/5CQNJ3IYANEU.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/5F3285LVQ797.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/63ISXFH5NC6I.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/6H9SW2XIG904.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/6NZBOPWHTRT9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/6Q8W14JWTPY0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/7LIZXP0ABXMD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/9208UA6MO67V.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AATHNU8BMF08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO3CQY8IQ6T0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/ASRRFTGKBIKO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/B446SDQ7IX3Y.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/B8IM6LJLACF9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/BWWBJ27870KH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/D166JA7M6APT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/DHIPTK79RB6C.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/DYMPRQL18MFN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/EOEHSCAX7U3C.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/F740HWU2TYWD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/FHC06P2E3QYH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/GA5DEHQOIU8R.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/GVR7N6LC6R5K.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/GWP0Z7Y39KMX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/H464R2HY15UZ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/HCUY64DIIC4V.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/HY3593VTENFR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/I6OXLJLHFN5Z.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/K6LRX3S5RKQM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/KKMYVABWXPNC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/KOGA28RSD93G.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/KPJ77YCRQ7N7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/L1LJ3Q7MA5Q2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/LE0P29TF02WG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/MSY2XASFHTPM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/MUL684ZP770C.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/NGKXT4SUQ9WF.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/NKINPYVAYXWL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/NLBN34QM7S2X.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/ODQKZ2E30C6V.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/OL7VZA768GB3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/OWB09MWVL0BM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/R9D498D5QMLN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/RO4XR32YXX7Z.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/RQ0S8JSNCD8A.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/RTPWS2PH61Q7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/SGO9ENM2U63R.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/TMUONX8N5C0Q.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/TNQ6CXYCNGM2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/TV1VSP5CFHAU.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/U75503PLT1GA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/VF5CML894YZ6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/W6RX4LJBOR99.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/WHDK3LM1PNYL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/WJ4M58QD6SGB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/XZHO71AJ2OBW.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/YVOF7HMNYCP8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/ZLDTNC5TRURB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/ZTNOSJF0W8QH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/ZWVN08DFR7MJ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/font-colors.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/static/apology.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/templates/base_pdf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/templates/base_pdf2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/templates/pdf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/trial.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TM_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TM_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/generate_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/generate_pdf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/apology.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/apology.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +109,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -42,39 +122,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/etking/PycharmProjects/TMapp/seance/templates&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.TM_app.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/etking/PycharmProjects/TMapp/seance/templates",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="/private/var/folders/xb/r3swjv4142j_hz36jmf0zxq00000gn/T/qodana_output/qodana.sarif.json" reportGuid="c43fdf83-350e-4329-ac5c-e8626bae7f1e" reportId="TMapp/qodana/2024-03-25" />
-    </option>
-  </component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/seance/templates" />
-      <recent name="$PROJECT_DIR$/seance/static" />
-      <recent name="$PROJECT_DIR$/seance" />
       <recent name="$PROJECT_DIR$/static/images" />
-      <recent name="$PROJECT_DIR$/seance/static/assets" />
+      <recent name="$PROJECT_DIR$/media" />
+      <recent name="$PROJECT_DIR$/seance" />
+      <recent name="$PROJECT_DIR$/seance/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/seance/static" />
@@ -88,9 +164,10 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="TM_app.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (SEANCE_app)" />
+      <option name="SDK_NAME" value="Python 3.12 (TM_app)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -128,6 +205,7 @@
       <workItem from="1712401198042" duration="1000" />
       <workItem from="1712405078960" duration="3503000" />
       <workItem from="1712642117747" duration="850000" />
+      <workItem from="1712644054609" duration="69434000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -193,11 +271,30 @@
       <option name="project" value="LOCAL" />
       <updated>1712408914420</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="DFD integrated on the results page.">
+      <option name="closed" value="true" />
+      <created>1712747137054</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712747137054</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -208,6 +305,7 @@
     <MESSAGE value="Fixed calculation." />
     <MESSAGE value="Added recommendations." />
     <MESSAGE value="Accordion added on the results page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Accordion added on the results page." />
+    <MESSAGE value="DFD integrated on the results page." />
+    <option name="LAST_COMMIT_MESSAGE" value="DFD integrated on the results page." />
   </component>
 </project>

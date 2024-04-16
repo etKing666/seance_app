@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_pdf.html" %}
 {% load static %}
 
 {% block body %}
@@ -132,20 +132,20 @@
         </div>
         <br>
         {% if scores.overall < 1  %}
-            <h4 style="text-align:center" class="bg-success .text-body-emphasis">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                VERY LOW RISK</b></h4>
+            <h4 style="text-align:center" class="bg-success .text-body-emphasis">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                VERY LOW RISK</h4>
         {% elif scores.overall >= 1 and scores.overall < 2 %}
-            <h4 style="text-align:center" class="bg-success-subtle">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                LOW RISK</b></h4>
+            <h4 style="text-align:center" class="bg-success-subtle">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                LOW RISK</h4>
         {% elif scores.overall >= 2 and scores.overall < 3 %}
-            <h4 style="text-align:center" class="bg-warning .text-body-emphasis bg-opacity-50">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                MODERATE RISK</b></h4>
+            <h4 style="text-align:center" class="bg-warning .text-body-emphasis bg-opacity-50">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                MODERATE RISK</h4>
         {% elif scores.overall >= 3 and scores.overall < 4 %}
-            <h4 style="text-align:center" class="bg-danger-subtle">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                HIGH RISK</b></h4>
+            <h4 style="text-align:center" class="bg-danger-subtle">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                HIGH RISK</h4>
         {% elif scores.overall >= 4 %}
-            <h4 style="text-align:center" class="bg-danger .text-body-emphasis">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                VERY HIGH RISK</b></h4>
+            <h4 style="text-align:center" class="bg-danger .text-body-emphasis">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                VERY HIGH RISK</h4>
         {% endif %}
             <h4 class="bg-success bg-gradient text-white text-center">Data Flow Diagram of Your Organisation</h4>
         <div class="text-center position-relative">
@@ -154,14 +154,5 @@
         <p>This is the data flow diagram of your organisation based on your answers. Please note that this might
             not be an accurate and complete presentation of your organisation, but take it as a starting point to think
             about possible vulnerabilities in your data flows, network and systems.</p>
-        <div class="text-center">
-            <form method="post" id="form2">
-                {% csrf_token %}
-                <input type='hidden' value='download_pdf' name='download_pdf'>
-                <button class="btn btn-outline-primary btn-lg" type="submit">Download report (PDF)</button>
-            </form>
-        </div>
 </section>
-
 {% endblock %}
-

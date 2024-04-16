@@ -15,6 +15,8 @@ class Tracker:
         self.current = "0.0"  # Initiates at zero
         self.sections = {1: "(your)Self", 2: "(your) Employees", 3: "(your) Assets", 4: "(your) Network",
                          5: "(your) Customers", 6: "(your) Environment"}
+        self.fname = "Nofile"
+        self.fpath = "Nopath"
 
 
 class Answers:
@@ -81,8 +83,12 @@ def next_step():
     Calculates the next step in the given list of steps
     """
     key = tracker.current
-    index = tracker.steps.index(key)
-    index += 1
+    try:
+        index = tracker.steps.index(key)
+        index += 1
+    except ValueError: # If the page is refreshed by the user, it returns 404 - a signal to render apology page
+        next_step = 404
+        return next_step
     try:
         next_step = tracker.steps[index]
     except IndexError:

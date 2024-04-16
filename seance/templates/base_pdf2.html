@@ -1,21 +1,41 @@
-{% extends "base.html" %}
-{% load static %}
+<!DOCTYPE html>
+<head>
+    <style>
+        h1 {text-align: center; font-size: 22px}
+        h2 {text-align: center; font-size: 18px; display: inline; background-color:CornflowerBlue; color:White;}
+        h3 {text-align: left; font-size: 16px; display: inline; padding: 0px; margin: 0px; background-color:Gainsboro; color:Black;}
+        p {text-align: justify; font-size: 12px}
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Your SEANCE Cyber Security Readiness Report</title>
+</head>
 
-{% block body %}
-<section class="clean-block container-fluid" style="margin-top:200px;width:1400px;padding-right:200px;padding-left:200px">
+<body>
+    <nav>
+        <div class="container"><img src="./static/images/logo.png" style="width: 100px;">
+            <div id="navcol-1">
+                <h1>SEANCE Framework - Your Cyber Security Readiness Report</h1>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section>
+            <div>
+                <div>
+                    <section>
     <br>
-        <h2 class="text-info" style="text-align:center;margin-bottom:15px">Here are your results</h2>
-        <h4 class="bg-info bg-gradient bg-opacity-50">Layer 1: {{ sections.1 }}</h4>
+        <h2>Layer 1: {{ sections.1 }}</h2>
         <p>You average cyber security risk rating for this layer: <b>{{ scores.layer1 }}/5</b></p>
-        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
-        <div class="accordion" id="accordion-layer1">
+        <h3>Recommended actions to reduce your risk:</h3>
+        <div class="accordion" id="accordion-layer1" style="margin-top:200px;width:1400px;padding-right:200px;padding-left:200px">
         {% for entry in suggestions.layer1 %}
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="header{{ entry.sid }}">
+                    <h4 class="accordion-header" id="header{{ entry.sid }}">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ entry.sid }}" aria-expanded="false" aria-controls="collapse{{ entry.sid }}">
                         {{ entry.risk }}
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapse{{ entry.sid }}" class="accordion-collapse collapse" data-bs-parent="#accordion-layer1" aria-labelledby="header{{ entry.sid }}">
                         <div class="accordion-body">
                             <p>{{ entry.action|linebreaks }}</p>
@@ -26,9 +46,9 @@
         {% endfor %}
         </div>
         <br>
-        <h4 class="bg-info bg-gradient bg-opacity-50">Layer 2: {{ sections.2 }}</h4>
+        <h2>Layer 2: {{ sections.2 }}</h2>
         <p>You average cyber security risk rating: <b>{{ scores.layer2 }}/5</b></p>
-        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        <h3><b>Recommended actions to reduce your risk:</b></h3>
         <div class="accordion" id="accordion-layer2">
         {% for entry in suggestions.layer2 %}
                 <div class="accordion-item">
@@ -47,9 +67,9 @@
         {% endfor %}
         </div>
         <br>
-        <h4 class="bg-info bg-gradient bg-opacity-50">Layer 3: {{ sections.3 }}</h4>
+        <h2>Layer 3: {{ sections.3 }}</h2>
         <p>You average cyber security risk rating: <b>{{ scores.layer3 }}/5</b></p>
-        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        <h3><b>Recommended actions to reduce your risk:</b></h3>
         <div class="accordion" id="accordion-layer3">
         {% for entry in suggestions.layer3 %}
                 <div class="accordion-item">
@@ -68,9 +88,9 @@
         {% endfor %}
         </div>
         <br>
-        <h4 class="bg-info bg-gradient bg-opacity-50">Layer 4: {{ sections.4 }}</h4>
+        <h2>Layer 4: {{ sections.4 }}</h2>
         <p>You average cyber security risk rating: <b>{{ scores.layer4 }}/5</b></p>
-        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        <h3><b>Recommended actions to reduce your risk:</b></h3>
         <div class="accordion" id="accordion-layer4">
         {% for entry in suggestions.layer4 %}
                 <div class="accordion-item">
@@ -89,9 +109,9 @@
         {% endfor %}
         </div>
         <br>
-        <h4 class="bg-info bg-gradient bg-opacity-50">Layer 5: {{ sections.5 }}</h4>
+        <h2>Layer 5: {{ sections.5 }}</h2>
         <p>You average cyber security risk rating: <b>{{ scores.layer5 }}/5</b></p>
-        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        <h3><b>Recommended actions to reduce your risk:</b></h3>
         <div class="accordion" id="accordion-layer5">
         {% for entry in suggestions.layer5 %}
                 <div class="accordion-item">
@@ -110,9 +130,9 @@
         {% endfor %}
         </div>
         <br>
-        <h4 class="bg-info bg-gradient bg-opacity-50">Layer 6: {{ sections.6 }}</h4>
+        <h2>Layer 6: {{ sections.6 }}</h2>
         <p>You average cyber security risk rating: <b>{{ scores.layer6 }}/5</b></p>
-        <p class="bg-success-subtle text-success-emphasis"><b>Recommended actions to reduce your risk:</b></p>
+        <h3><b>Recommended actions to reduce your risk:</b></h3>
         <div class="accordion" id="accordion-layer6">
         {% for entry in suggestions.layer6 %}
                 <div class="accordion-item">
@@ -132,36 +152,42 @@
         </div>
         <br>
         {% if scores.overall < 1  %}
-            <h4 style="text-align:center" class="bg-success .text-body-emphasis">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                VERY LOW RISK</b></h4>
+            <h3 style="text-align:center">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                VERY LOW RISK</h3>
         {% elif scores.overall >= 1 and scores.overall < 2 %}
-            <h4 style="text-align:center" class="bg-success-subtle">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                LOW RISK</b></h4>
+            <h3 style="text-align:center">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                LOW RISK</h3>
         {% elif scores.overall >= 2 and scores.overall < 3 %}
-            <h4 style="text-align:center" class="bg-warning .text-body-emphasis bg-opacity-50">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                MODERATE RISK</b></h4>
+            <h3 style="text-align:center">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                MODERATE RISK</h3>
         {% elif scores.overall >= 3 and scores.overall < 4 %}
-            <h4 style="text-align:center" class="bg-danger-subtle">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                HIGH RISK</b></h4>
+            <h3 style="text-align:center">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                HIGH RISK</h3>
         {% elif scores.overall >= 4 %}
-            <h4 style="text-align:center" class="bg-danger .text-body-emphasis">Your overall cyber security risk rating: <b>{{ scores.overall }} / 5<br>
-                VERY HIGH RISK</b></h4>
+            <h3 style="text-align:center">Your overall cyber security risk rating: {{ scores.overall }} / 5<br>
+                VERY HIGH RISK</h3>
         {% endif %}
-            <h4 class="bg-success bg-gradient text-white text-center">Data Flow Diagram of Your Organisation</h4>
+            <h2>Data Flow Diagram of Your Organisation</h2>
         <div class="text-center position-relative">
-            <img class="img-fluid" src="{{ fname }}" style="width: 1000px;" alt="Data Flow Diagram of your organisation"/>
+            <img src="./{{ fname }}" style="width: 1000px;" alt="Data Flow Diagram of your organisation"/>
         </div>
         <p>This is the data flow diagram of your organisation based on your answers. Please note that this might
             not be an accurate and complete presentation of your organisation, but take it as a starting point to think
             about possible vulnerabilities in your data flows, network and systems.</p>
-        <div class="text-center">
-            <form method="post" id="form2">
-                {% csrf_token %}
-                <input type='hidden' value='download_pdf' name='download_pdf'>
-                <button class="btn btn-outline-primary btn-lg" type="submit">Download report (PDF)</button>
-            </form>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+                    <h5>About SEANCE Framework</h5>
+                    <p>SEANCE is a threat modelling framework tailored for micro businesses. It was developed by Etkin Getir as part of his MSc in Computer Science dissertation at the University of Essex Online. Read more about the framework <u><a href="about.html">here</a></u>.</p>
         </div>
-</section>
+        <div class="footer-copyright">
+            <p>© 2024 Etkin Getir. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 
-{% endblock %}
-
+</html>

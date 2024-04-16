@@ -1,16 +1,29 @@
 import random, string
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from .helpers import answers, tracker, next_step, reset, record_answers, main_steps, scores, advices, get_suggestions
 from .models import Questions, Suggestions
 from .dfd import create_dfd, update_dfd
-from .generate_pdf import generate_pdf
+from xhtml2pdf import pisa
+from django.template.loader import get_template
 
 
 def index(request):
     return render(request, 'index.html', )
 
-
 def about(request):
+    sugs = {}
+    for x in (1, 2, 3, 4, 5, 6):
+        temp = []
+        query = Suggestions.objects.filter(section=x)
+        for q in query:
+            sub = []
+            sub.append(q.risk)
+            sub.append(q.action)
+            sub.append(q.sources)
+            temp.append(sub)
+        sugs[x] = temp
+
+    print(sugs)
     return render(request, 'about.html')
 
 
@@ -46,6 +59,10 @@ def questions(request):
         return render(request, 'questions.html',
                       {'questions': questions, 'section': section, 'section_name': tracker.sections[section]})
     else:
+        if 'download_pdf' in request.POST:
+            return render_pdf(request, 'base_pdf.html',
+                      {'answers': answers, 'sections': tracker.sections, 'scores': scores, 'suggestions': advices,
+                       'fname': tracker.fpath})
         form_data = dict(request.POST)
         del form_data['csrfmiddlewaretoken']  # Deleting csrfmiddlewaretoken from the dict
         keys = list(form_data.keys())  # Getting the keys for all answered questions in this iteration
@@ -53,7 +70,10 @@ def questions(request):
         # Evaluating answers and the branching logic
         for key in keys:
             answer = form_data[str(key)][0]
-            question = tracker.question_base[int(key)]
+            try:
+                question = tracker.question_base[int(key)]
+            except IndexError:
+                return render(request, 'apology.html')
             if question.dfd:  # If question has an impact on the DFD, updates the DFD parameters
                 update_dfd(key, answer)
             if question.qtype == 4:
@@ -88,6 +108,8 @@ def questions(request):
                     value = round((0.5 / question.factor * 5), 2)  # Effectively dividing by half
                     record_answers(key, answer, value)
         tracker.current = next_step()  # Moving the pointer to the next step
+        if tracker.current == 404:
+            return render(request, 'apology.html')
 
         # Retrieving all questions for the next step
         if tracker.current is not None:
@@ -105,18 +127,20 @@ def questions(request):
 
         # Gets suggestions
         # get_suggestions()
-        fname = ''.join(random.choices(string.ascii_uppercase + string.digits, k=12))
-        create_dfd(fname)
-        fname = "/media/" + fname + ".png"
+        tracker.fname = ''.join(random.choices(string.ascii_uppercase + string.digits, k=12))
+        create_dfd(tracker.fname)
+        tracker.fpath = "/media/" + tracker.fname + ".png"
         return render(request, 'complete.html',
                       {'answers': answers, 'sections': tracker.sections, 'scores': scores, 'suggestions': advices,
-                       'fname': fname})
+                       'fname': tracker.fpath})
 
 
 def complete(request):
     if request.method == 'POST':
         if 'download_pdf' in request.POST:
-            return generate_pdf()
+            return render_pdf(request, 'complete.html',
+                      {'answers': answers, 'sections': tracker.sections, 'scores': scores, 'suggestions': advices,
+                       'fname': tracker.fpath})
     else:
         try:
             return render(request, 'complete.html')
@@ -126,3 +150,28 @@ def complete(request):
 
 def apology(request):
     return render(request, 'apology.html')
+
+def render_pdf(request, template_path, context):
+    filename = "Cyber Security Readiness Report_" + tracker.fname + ".pdf"
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = f'attachment; filename="{filename}"'
+
+    template = get_template(template_path)
+    html = template.render(context)
+
+    pisa_status = pisa.CreatePDF(html, dest=response)
+
+    if pisa_status.err:
+      return render(request, 'apology.html')
+
+    return response
+
+
+def base_pdf(request):
+    if request.method == 'POST':
+        if 'download_pdf' in request.POST:
+            return render_pdf(request, 'base_pdf.html',
+                      {'answers': answers, 'sections': tracker.sections, 'scores': scores, 'suggestions': advices,
+                       'fname': tracker.fname})
+    else:
+        return render(request, 'apology.html')

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        h1 {text-align: center; font-size: 22px}
+        h2 {text-align: center; font-size: 18px; display: inline; background-color:CornflowerBlue; color:White;}
+        h3 {text-align: center; font-size: 14px; background-color:Gainsboro; padding-top: 9px; padding-bottom: 0; margin: 0; }
+        h4 {text-align: justify; font-size: 12px; display: inline; padding: 0; margin: 0}
+        p {text-align: justify; font-size: 12px}
+        #overall {text-align: center; font-size: 16px; padding-top: 11px; padding-bottom: 0; margin: 0;}
+        #rating {font-size: 14px;}
+        #actions-title {border-top:2px solid black; border-bottom:2px solid black;}
+        #newpage {break-before: always;}
+        #disclaimer {font-size: 10px; font-style: italic; background-color: #ecedee; padding-top: 9px; padding-bottom: 0; margin: 0;}
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Your SEANCE Cyber Security Readiness Report</title>
+</head>
+
+<body>
+    <nav>
+        <div><img src="./static/images/logo.png" style="width: 100px;">
+            <div>
+                <h1>Your SEANCE Cyber Security Readiness Report</h1>
+            </div>
+        </div>
+    </nav>
+    <main>
+    <br>
+    <div  style="border: 3px solid crimson;">
+    {% if scores.overall < 1  %}
+            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+                <b style="background-color: ForestGreen; color: GhostWhite">VERY LOW RISK</b></p>
+        {% elif scores.overall >= 1 and scores.overall < 2 %}
+            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+                <b style="background-color: LightGreen; color: Black">LOW RISK</b></p>
+        {% elif scores.overall >= 2 and scores.overall < 3 %}
+            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+                <b style="background-color: DarkOrange; color: Black">MODERATE RISK</b><p>
+        {% elif scores.overall >= 3 and scores.overall < 4 %}
+            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+                <b style="background-color: Tomato; color: Black">HIGH RISK</b></p>
+        {% elif scores.overall >= 4 %}
+            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+                <b style="background-color: Red; color: Snow">VERY HIGH RISK</b></p>
+        {% endif %}
+    </div>
+    <div><br></div>
+    <div>
+        <br>
+        <h2>Layer 1: {{ sections.1 }}</h2>
+        <p id="rating">You average cyber security risk rating for this layer: <b style="background-color: gold">{{ scores.layer1 }}/5</b></p>
+        <h3 id="actions-title">Recommended actions to reduce your risk:</h3>
+        <br>
+        {% for entry in suggestions.layer1 %}
+            <h4>{{ entry.risk }}</h4>
+            <p>{{ entry.action|linebreaks }}</p>
+            <p>{{ entry.sources|safe|linebreaks }}</p>
+            <hr>
+        {% endfor %}
+            <br>
+        <h2>Layer 2: {{ sections.2 }}</h2>
+        <p id="rating">You average cyber security risk rating for this layer: <b style="background-color: gold">{{ scores.layer2 }}/5</b></p>
+        <h3 id="actions-title">Recommended actions to reduce your risk:</h3>
+        <br>
+        {% for entry in suggestions.layer2 %}
+            <h4>{{ entry.risk }}</h4>
+            <p>{{ entry.action|linebreaks }}</p>
+            <p>{{ entry.sources|safe|linebreaks }}</p>
+            <hr>
+        {% endfor %}
+            <br>
+        <h2>Layer 3: {{ sections.3 }}</h2>
+        <p id="rating">You average cyber security risk rating for this layer: <b style="background-color: gold">{{ scores.layer3 }}/5</b></p>
+        <h3 id="actions-title">Recommended actions to reduce your risk:</h3>
+        <br>
+        {% for entry in suggestions.layer3 %}
+            <h4>{{ entry.risk }}</h4>
+            <p>{{ entry.action|linebreaks }}</p>
+            <p>{{ entry.sources|safe|linebreaks }}</p>
+            <hr>
+        {% endfor %}
+            <br>
+        <h2>Layer 4: {{ sections.4 }}</h2>
+        <p id="rating">You average cyber security risk rating for this layer: <b style="background-color: gold">{{ scores.layer4 }}/5</b></p>
+        <h3 id="actions-title">Recommended actions to reduce your risk:</h3>
+        <br>
+        {% for entry in suggestions.layer4 %}
+            <h4>{{ entry.risk }}</h4>
+            <p>{{ entry.action|linebreaks }}</p>
+            <p>{{ entry.sources|safe|linebreaks }}</p>
+            <hr>
+        {% endfor %}
+            <br>
+        <h2>Layer 5: {{ sections.5 }}</h2>
+        <p id="rating">You average cyber security risk rating for this layer: <b style="background-color: gold">{{ scores.layer5 }}/5</b></p>
+        <h3 id="actions-title">Recommended actions to reduce your risk:</h3>
+        <br>
+        {% for entry in suggestions.layer5 %}
+            <h4>{{ entry.risk }}</h4>
+            <p>{{ entry.action|linebreaks }}</p>
+            <p>{{ entry.sources|safe|linebreaks }}</p>
+            <hr>
+        {% endfor %}
+            <br>
+        <h2>Layer 6: {{ sections.6 }}</h2>
+        <p>You average cyber security risk rating: <b>{{ scores.layer6 }}/5</b></p>
+        <h3><b>Recommended actions to reduce your risk:</b></h3>
+        <p id="rating">You average cyber security risk rating for this layer: <b style="background-color: gold">{{ scores.layer6 }}/5</b></p>
+        <h3 id="actions-title">Recommended actions to reduce your risk:</h3>
+        <br>
+        {% for entry in suggestions.layer6 %}
+            <h4>{{ entry.risk }}</h4>
+            <p>{{ entry.action|linebreaks }}</p>
+            <p>{{ entry.sources|safe|linebreaks }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+    <div id="newpage">
+            <br>
+            <h2>Data Flow Diagram of Your Organisation</h2>
+        <div style="border: 2px solid black;">
+            <img src="./{{ fname }}" style="width: 1000px;" alt="Data Flow Diagram of your organisation"/>
+        </div>
+        <p>This is the data flow diagram of your organisation based on your answers. Please note that this might
+            not be an accurate and complete presentation of your organisation, but take it as a starting point to think
+            about possible vulnerabilities in your data flows, network and systems.</p>
+    </div>
+    </main>
+    <footer>
+        <div id="disclaimer">
+            <p><b>Disclaimer:</b> This report has been prepared on the basis of the information provided by you in
+                response to the questions posed. The recommendations and data flow diagram contained in this report
+                are intended as general guidance and are neither exhaustive nor infallible. As such, they may contain
+                inaccuracies or omissions. We strongly recommend that you conduct your own thorough research and,
+                if necessary, consult with a professional before implementing any cyber security measures based on
+                this report. By using this tool, you acknowledge and agree that any reliance on the information
+                contained herein is entirely at your own risk.</p>
+        </div>
+        <br>
+        <div>
+                    <h4>About SEANCE Framework</h4>
+                    <p>SEANCE is a threat modelling framework tailored for micro businesses. It was developed by Etkin Getir as part of his MSc in Computer Science dissertation at the University of Essex Online. Read more about the framework <u><a href="about.html">here</a></u>.</p>
+        </div>
+        <div>
+            <p>© 2024 Etkin Getir. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
