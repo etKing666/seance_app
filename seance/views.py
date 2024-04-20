@@ -2,7 +2,7 @@ import random, string
 from django.shortcuts import render, redirect, HttpResponse
 from .helpers import answers, tracker, next_step, reset, record_answers, main_steps, scores, advices, get_suggestions
 from .models import Questions, Suggestions
-from .dfd import create_dfd, update_dfd
+from .dfd import create_dfd, update_dfd, param
 from xhtml2pdf import pisa
 from django.template.loader import get_template
 
@@ -50,6 +50,7 @@ def questions(request):
         # query = Suggestions.objects.filter(rquid=10200)
         # tracker.suggestion_base = query
         reset()  # Resets the pointer to the beginning of the question set
+        param.reset()  # Resets the DFD parameters
 
         # Getting all questions for the first step
         query = Questions.objects.filter(step=tracker.current).order_by("qid")
@@ -77,6 +78,8 @@ def questions(request):
             if question.dfd:  # If question has an impact on the DFD, updates the DFD parameters
                 update_dfd(key, answer)
             if question.qtype == 4:
+                if int(answer) > 10:
+                    answer = 10
                 value = round(((0.1 * int(answer)) / question.factor * 5), 2)
                 record_answers(key, answer, value)
             elif question.qtype == 5:

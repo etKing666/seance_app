@@ -2,14 +2,13 @@
 <head>
     <style>
         h1 {text-align: center; font-size: 22px}
-        h2 {text-align: center; font-size: 18px; display: inline; background-color:CornflowerBlue; color:White;}
+        h2 {text-align: center; font-size: 18px; display: inline; background-color:DarkSlateGray; color:GhostWhite;}
         h3 {text-align: center; font-size: 14px; background-color:Gainsboro; padding-top: 9px; padding-bottom: 0; margin: 0; }
         h4 {text-align: justify; font-size: 12px; display: inline; padding: 0; margin: 0}
         p {text-align: justify; font-size: 12px}
         #overall {text-align: center; font-size: 16px; padding-top: 11px; padding-bottom: 0; margin: 0;}
         #rating {font-size: 14px;}
         #actions-title {border-top:2px solid black; border-bottom:2px solid black;}
-        #newpage {break-before: always;}
         #disclaimer {font-size: 10px; font-style: italic; background-color: #ecedee; padding-top: 9px; padding-bottom: 0; margin: 0;}
     </style>
     <meta charset="utf-8">
@@ -29,23 +28,25 @@
     <br>
     <div  style="border: 3px solid crimson;">
     {% if scores.overall < 1  %}
-            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+            <p id="overall">Your overall cyber security risk rating: <b style="background-color: gold">{{ scores.overall }}</b> / 5<br>
                 <b style="background-color: ForestGreen; color: GhostWhite">VERY LOW RISK</b></p>
         {% elif scores.overall >= 1 and scores.overall < 2 %}
-            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+            <p id="overall">Your overall cyber security risk rating: <b style="background-color: gold">{{ scores.overall }}</b> / 5<br>
                 <b style="background-color: LightGreen; color: Black">LOW RISK</b></p>
         {% elif scores.overall >= 2 and scores.overall < 3 %}
-            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+            <p id="overall">Your overall cyber security risk rating: <b style="background-color: gold">{{ scores.overall }}</b> / 5<br>
                 <b style="background-color: DarkOrange; color: Black">MODERATE RISK</b><p>
         {% elif scores.overall >= 3 and scores.overall < 4 %}
-            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+            <p id="overall">Your overall cyber security risk rating: <b style="background-color: gold">{{ scores.overall }}</b> / 5<br>
                 <b style="background-color: Tomato; color: Black">HIGH RISK</b></p>
         {% elif scores.overall >= 4 %}
-            <p id="overall">Your overall cyber security risk rating: <b>{{ scores.overall }}</b> / 5<br>
+            <p id="overall">Your overall cyber security risk rating: <b style="background-color: gold">{{ scores.overall }}</b> / 5<br>
                 <b style="background-color: Red; color: Snow">VERY HIGH RISK</b></p>
         {% endif %}
     </div>
-    <div><br></div>
+    <div>
+        <br>
+    </div>
     <div>
         <br>
         <h2>Layer 1: {{ sections.1 }}</h2>
@@ -116,9 +117,15 @@
             <hr>
         {% endfor %}
     </div>
-    <div id="newpage">
+    <div>
+        <pdf:nextpage />
+    </div>
+    <div>
+        <br>
+        <h2>Data Flow Diagram of Your Organisation</h2>
+        <div>
             <br>
-            <h2>Data Flow Diagram of Your Organisation</h2>
+        </div>
         <div style="border: 2px solid black;">
             <img src="./{{ fname }}" style="width: 1000px;" alt="Data Flow Diagram of your organisation"/>
         </div>

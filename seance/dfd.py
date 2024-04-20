@@ -27,6 +27,9 @@ class Param:
     firewall: bool = False
     website: bool = False
 
+    def reset(self):
+        self.__init__()
+
 
 param = Param()
 
@@ -87,7 +90,6 @@ def update_dfd(qid, response):
                 param.waf = True
             else:
                 param.firewall = True
-
 
 def create_dfd(filename):
     """
@@ -174,7 +176,7 @@ def create_dfd(filename):
             with SystemBoundary("SaaS"):
                 saas = Container(
                     name="SaaS",
-                    technology="Google Workspace, Microsoft 365, etc.",
+                    technology="Google Workspace, etc.",
                     description="Software as a Service solutions",
                 )
 
@@ -197,8 +199,11 @@ def create_dfd(filename):
 
         if param.employee or param.multi_employee:
             customer - Relationship("Requests for service") - employee
+            employee - Relationship("") - admin
             if param.multi_computer:
                 employee - Relationship("Serves customers using") - regular_computer
+        else:
+            customer - Relationship("Requests for service") - admin
 
         if param.firewall:
             admin_computer - Relationship("") - firewall

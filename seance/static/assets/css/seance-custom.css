@@ -26,3 +26,60 @@
   display: none;
   overflow: hidden;
 }
+
+.overall-very-low {
+  font-size: 16px;
+  text-align: center;
+  background-color: ForestGreen;
+  color: GhostWhite;
+  padding: 15px;
+}
+
+.overall-low {
+  font-size: 16px;
+  text-align: center;
+  background-color: LightGreen;
+  color: Black;
+  padding: 15px;
+}
+
+.overall-medium {
+  font-size: 16px;
+  text-align: center;
+  background-color: DarkOrange;
+  color: Black;
+  padding: 15px;
+}
+
+.overall-high {
+  font-size: 16px;
+  text-align: center;
+  background-color: Tomato;
+  color: Black;
+  padding: 15px;
+}
+
+.overall-very-high {
+  font-size: 16px;
+  text-align: center;
+  background-color: Red;
+  color: Snow;
+  padding: 15px;
+}
+
+
+.layer-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  display: inline;
+  padding: 15px;
+}
+
+
+#btnDownload,
+#btnHome{
+    display: inline-block;
+    vertical-align: top;
+}
+
