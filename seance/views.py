@@ -1,45 +1,94 @@
+"""The module that holds the views of the application.
+
+This module contains all the views of the application which enable the rendering of templates as well as the basic
+functionality of the application. The module has no classes as the views are based on functions.
+
+Functions:
+----------
+index(request):  The function that renders the homepage of the application.
+
+about(request):  The function that renders the about page of the application.
+
+contact(request):  The function that renders the Contact page. A Google form is embedded to the page.
+
+start(request):  The function that renders the Start page.
+
+question(request):  The function that renders the questions on a step-by-step manner. It displays the first set of
+                    questions when the request type is GET and every time the user submits a POST request, next set of
+                    questions are served, until there are no more questions. In the end, result page is displayed. It
+                    is also responsible for various critical functions.
+
+complete(request):  The function that renders the results page.
+
+apology(request):  The function that renders the apology (error) page.
+
+render(request, template_path, context):  The function that renders the pdf file.
+
+Imports:
+--------
+random:  random package is used to create a random filename for DFD image file.
+
+string: string package is used together with the random package to supply random() with various ASCII characters.
+
+xhtml2pdf: It is used to generate a pdf file from an html file.
+
+django: Django modules are imported to make use of several functions it offers (such as render(), get_template(), etc.)
+
+helpers: The dataclasses and functions defined in the helper module are used throughout the module.
+
+models: Questions table is imported to query the database for questions.
+
+dfd: dfd module is imported to call the necessary functions (create_dfd() and update_dfd()) to create teh pdf file.
+
+"""
+
 import random, string
-from django.shortcuts import render, redirect, HttpResponse
-from .helpers import answers, tracker, next_step, reset, record_answers, main_steps, scores, advices, get_suggestions
-from .models import Questions, Suggestions
-from .dfd import create_dfd, update_dfd, param
 from xhtml2pdf import pisa
+from django.shortcuts import render, HttpResponse
 from django.template.loader import get_template
+from .helpers import answers, tracker, next_step, reset, record_answers, main_steps, scores, advices, counter_reset
+from .models import Questions
+from .dfd import create_dfd, update_dfd, param
 
 
 def index(request):
+    """The function that renders the homepage of the application."""
     return render(request, 'index.html', )
 
-def about(request):
-    sugs = {}
-    for x in (1, 2, 3, 4, 5, 6):
-        temp = []
-        query = Suggestions.objects.filter(section=x)
-        for q in query:
-            sub = []
-            sub.append(q.risk)
-            sub.append(q.action)
-            sub.append(q.sources)
-            temp.append(sub)
-        sugs[x] = temp
 
-    print(sugs)
+def about(request):
+    """The function that renders the about page.
+    All content is static and hard-coded into the page.
+    """
     return render(request, 'about.html')
 
 
 def contact(request):
+    """The function that renders the Contact page
+    A Google form is embedded to the page.
+    """
     return render(request, 'contact.html')
 
 
 def start(request):
+    """
+    The function that renders the Start page.
+    All content is static and hard-coded into the page.
+    """
     return render(request, 'start.html')
 
 
 def questions(request):
+    """The function that renders the questions on a step-by-step manner.
+    It displays the first set of questions when the request type is GET and every time the user submits a POST request,
+    next set of questions are served, until there are no more questions. In the end, result page is displayed.
+
+    The function also includes branching logic and value calculation. It calls several functions in the helpers
+    module to store answers and values; increment the question counter, create the pdf file and reset all variables.
+"""
     keys, questions, steps = [], [], []
     if request.method == 'GET':
-        tracker.question_base = {}
-        tracker.steps = []
+        reset()  # Resets the tracker, scores and suggestions
         # Populating the global variables
         query = Questions.objects.all().order_by("qid")
         for q in query:
@@ -47,9 +96,7 @@ def questions(request):
             steps.append(q.step)  # Retrieves the steps of all questions, includes duplicate steps
         steps = list(dict.fromkeys(steps))  # Removes the duplicates
         main_steps(steps)  # Extracts main steps from the list of all steps and stores it to the global tracker list
-        # query = Suggestions.objects.filter(rquid=10200)
-        # tracker.suggestion_base = query
-        reset()  # Resets the pointer to the beginning of the question set
+        counter_reset()  # Resets the counter to the first step
         param.reset()  # Resets the DFD parameters
 
         # Getting all questions for the first step
@@ -62,8 +109,9 @@ def questions(request):
     else:
         if 'download_pdf' in request.POST:
             return render_pdf(request, 'base_pdf.html',
-                      {'answers': answers, 'sections': tracker.sections, 'scores': scores, 'suggestions': advices,
-                       'fname': tracker.fpath})
+                              {'answers': answers, 'sections': tracker.sections, 'scores': scores,
+                               'suggestions': advices,
+                               'fname': tracker.fpath})
         form_data = dict(request.POST)
         del form_data['csrfmiddlewaretoken']  # Deleting csrfmiddlewaretoken from the dict
         keys = list(form_data.keys())  # Getting the keys for all answered questions in this iteration
@@ -129,7 +177,6 @@ def questions(request):
             (sum([scores.layer1, scores.layer2, scores.layer3, scores.layer4, scores.layer5, scores.layer6]) / 6), 2)
 
         # Gets suggestions
-        # get_suggestions()
         tracker.fname = ''.join(random.choices(string.ascii_uppercase + string.digits, k=12))
         create_dfd(tracker.fname)
         tracker.fpath = "/media/" + tracker.fname + ".png"
@@ -139,11 +186,19 @@ def questions(request):
 
 
 def complete(request):
+    """
+    The function that renders the results page.
+
+    The results content on the page (context) is created by several other functions (such as questions()) and passed
+    to the template. If the request type is GET, apology page is rendered if it is not possible to render the results
+    page (anticipated behaviour).
+    """
     if request.method == 'POST':
         if 'download_pdf' in request.POST:
             return render_pdf(request, 'complete.html',
-                      {'answers': answers, 'sections': tracker.sections, 'scores': scores, 'suggestions': advices,
-                       'fname': tracker.fpath})
+                              {'answers': answers, 'sections': tracker.sections, 'scores': scores,
+                               'suggestions': advices,
+                               'fname': tracker.fpath})
     else:
         try:
             return render(request, 'complete.html')
@@ -152,9 +207,20 @@ def complete(request):
 
 
 def apology(request):
+    """The function that renders the apology page.
+
+    This page is used to handle the errors caught by try/except (and other) statements.
+    """
     return render(request, 'apology.html')
 
+
 def render_pdf(request, template_path, context):
+    """The function that renders the pdf file out of the content on the results page.
+
+    It uses base_pdf as the template of the pdf file and uses the same context on the results page.
+
+    If the pdf file cannot be rendered for some reason, apology page is rendered.
+    """
     filename = "Cyber Security Readiness Report_" + tracker.fname + ".pdf"
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = f'attachment; filename="{filename}"'
@@ -165,16 +231,8 @@ def render_pdf(request, template_path, context):
     pisa_status = pisa.CreatePDF(html, dest=response)
 
     if pisa_status.err:
-      return render(request, 'apology.html')
+        return render(request, 'apology.html')
 
     return response
 
 
-def base_pdf(request):
-    if request.method == 'POST':
-        if 'download_pdf' in request.POST:
-            return render_pdf(request, 'base_pdf.html',
-                      {'answers': answers, 'sections': tracker.sections, 'scores': scores, 'suggestions': advices,
-                       'fname': tracker.fname})
-    else:
-        return render(request, 'apology.html')

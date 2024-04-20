@@ -13,8 +13,7 @@ urlpatterns = [
     path('start.html', views.start),
     path('questions/', views.questions, name='questions'),
     path('complete.html', views.complete, name='complete'),
-    path('apology.html', views.apology, name='apology'),
-    path('base_pdf.html', views.base_pdf, name='base_pdf')
+    path('apology.html', views.apology, name='apology')
 ]
 
 

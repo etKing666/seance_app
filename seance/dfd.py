@@ -1,16 +1,78 @@
+"""The classes and functions used to create a Data Flow Diagram (DFD).
+
+This module uses diagrams package (https://pypi.org/project/diagrams/) to create a DFD based on the user's answers. It
+includes a dataclass and two functions that are used to create a DFD.
+
+Classes:
+--------
+Param: The dataclass which holds the parameters for the DFD. It also has a reset() method which is designed to reset
+the instantiated Param object to its original state.
+
+Functions:
+----------
+update_dfd():  A function which captures the parameter for the DFD. It stores the parameters to the Param object.
+
+create_dfd():  The function which creates the DFD using the parameters stored in the Param object.
+
+Imports:
+--------
+diagrams:  The Python package that is used to create the DFD. More info: https://pypi.org/project/diagrams/
+
+dataclasses:  Dataclasses are used in defining dataclasses instead of regular classes for
+              simplicity.
+
+"""
+
+
 from diagrams import Diagram, Edge
 from diagrams.c4 import Container, Database, SystemBoundary, Relationship
 from diagrams.generic.network import Router, Firewall
 from diagrams.onprem.client import User, Users
-from .helpers import answers
 from dataclasses import dataclass
 
 
 @dataclass
 class Param:
+    """ A dataclass to hold the parameters for the DFD.
+
+    Attributes:
+    ----------
+    multi_admin: bool
+        A boolean to indicate if the organisation has multiple admins or not.
+    employee: bool
+        A boolean to indicate if the organisation has exactly one employee.
+     multi_employee: bool
+        A boolean to indicate if the organisation has multiple employees or not.
+    remote_employee: bool
+        A boolean to indicate if the has remote employees or not.
+    multi_computer: bool
+        A boolean to indicate if the organisation has multiple computers or not.
+    onprem_setup: bool
+        A boolean to indicate if the organisation has an on-premises server in place.
+    cloud_setup: bool
+        A boolean to indicate if the organisation uses cloud services or not.
+    saas: bool
+        A boolean to indicate if the organisation uses SaaS solutions or not.
+    iot: bool
+        A boolean to indicate if the organisation uses IoT or not.
+    hosted_webapp: bool
+        A boolean to indicate if the organisation has a website that is hosted on on-premises servers.
+    remote_webapp: bool
+        A boolean to indicate if the organisation has a website that is hosted on remote servers.
+    waf: bool
+        A boolean to indicate if the organisation has a WAF in place or not.
+    wifi_share: bool
+        A boolean to indicate if the organisation shares the Wi-Fi connection with their customers or not.
+    firewall: bool
+        A boolean to indicate if the organisation has a firewall in place or not.
+    website: bool
+        A boolean to indicate if the organisation has a website or not.
+
+    Methods:
+    --------
+    reset():  Resets the instantiated Param object to its original state.
     """
-    A dataclass to hold the parameters for the DFD
-    """
+
     multi_admin: bool = False
     employee: bool = False
     multi_employee: bool = False
@@ -35,9 +97,7 @@ param = Param()
 
 
 def update_dfd(qid, response):
-    """
-    Captures the parameters for the DFD
-    """
+    """ Captures the parameters for the DFD. """
     qid = int(qid)
 
     if qid == 10400:
@@ -92,9 +152,7 @@ def update_dfd(qid, response):
                 param.firewall = True
 
 def create_dfd(filename):
-    """
-    Create the DFD based on the user's answers
-    """
+    """ Creates the DFD based on the user's answers. """
 
     filename = "media/" + filename
 

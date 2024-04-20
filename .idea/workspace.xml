@@ -5,55 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Download PDF feature has been added.">
-      <change afterPath="$PROJECT_DIR$/media/0F4R1OT0VRXU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/1F4BYNNJVJEM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/3TAI9DG7K51O.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/3VWEEZNKCUJV.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/4D2A31ZJTPFX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/5PG1J7ZZWNFE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/5RICM1QNG58R.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/68EPEYHMLE25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/7X3Z38GFYYG6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/8GP6B2NDEJBN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/8OQZXG1LLHA9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/928BLU67GGX2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/9J8Z07JASWL5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/A57OVS8GFW26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/A9OTL8CHG6PA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/CSFVIBUDAR1M.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/DCDPQNPR8TX6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/EIH4MNEYUIWL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/FV069I9W63QQ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/FX36HY223INP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/GDUI6ZJDHIYQ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/GNT3IY0QLO67.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/IZYLM5P53EFI.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/JF1R9EPH7Y60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/KH7K4LJ7VW96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/NME1LYMIWK35.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/R07UEZ96ERMJ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/R8MK2W1IQRJ3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/S9BJ4WEXXS33.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/SLN495BTPYFY.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/SQC2KVBXYPT7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/V3M54B6FY7LX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/VV6JD4GD7110.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/VY4OGO54ZWEX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/XDCLW72HHZ3H.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/YGMM21GS3FYD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/YLJ76O6WG6DH.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/ZDN75KJ0M1GU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/ZVJ27PE63O1U.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/templates/complete backup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/2LW3JRCL7OU3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/7C4UMBLSTMBS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/GKH1JXZ9RLDI.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/JEC8FY07OKZO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/OID12O0PRMFV.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/XQ2UJ113D6C5.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/dfd backup.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/dfd.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/dfd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/static/assets/css/seance-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/seance/static/assets/css/seance-custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/font-colors.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/generate_pdf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/static/assets/css/baguetteBox.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/static/assets/css/vanilla-zoom.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/templates/base_pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base_pdf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/base_pdf2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/complete backup.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/templates/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/complete2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/layer1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/layout backup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/pdf.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/questions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/seance-layer1.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/templates/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/trial.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/views backup.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,6 +161,7 @@
       <workItem from="1713426385697" duration="13000" />
       <workItem from="1713426835607" duration="86000" />
       <workItem from="1713426937205" duration="19740000" />
+      <workItem from="1713603618534" duration="13962000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
