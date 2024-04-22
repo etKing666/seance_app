@@ -85,7 +85,7 @@ def questions(request):
 
     The function also includes branching logic and value calculation. It calls several functions in the helpers
     module to store answers and values; increment the question counter, create the pdf file and reset all variables.
-"""
+    """
     keys, questions, steps = [], [], []
     if request.method == 'GET':
         reset()  # Resets the tracker, scores and suggestions

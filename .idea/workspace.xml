@@ -4,37 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Download PDF feature has been added.">
-      <change afterPath="$PROJECT_DIR$/media/2LW3JRCL7OU3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/7C4UMBLSTMBS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/GKH1JXZ9RLDI.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/JEC8FY07OKZO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/OID12O0PRMFV.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/XQ2UJ113D6C5.png" afterDir="false" />
+    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Docstrings added.">
+      <change afterPath="$PROJECT_DIR$/media/5ISL1E3DIB83.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/8JJ103KFL6DX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/K0C3SWYH8OEZ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seance/migrations/0019_questions_pid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/dfd backup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/dfd.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/dfd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/font-colors.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/generate_pdf.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/static/assets/css/baguetteBox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/static/assets/css/vanilla-zoom.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seance/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/templates/base_pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base_pdf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/base_pdf2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/complete backup.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/templates/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/complete2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/layer1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/layout backup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/pdf.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/questions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/seance-layer1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/trial.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/views backup.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +143,7 @@
       <workItem from="1713426385697" duration="13000" />
       <workItem from="1713426835607" duration="86000" />
       <workItem from="1713426937205" duration="19740000" />
-      <workItem from="1713603618534" duration="13962000" />
+      <workItem from="1713603618534" duration="28937000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -243,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713270448245</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Docstrings added.">
+      <option name="closed" value="true" />
+      <created>1713640356336</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1713640356336</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +261,7 @@
     <MESSAGE value="Accordion added on the results page." />
     <MESSAGE value="DFD integrated on the results page." />
     <MESSAGE value="Download PDF feature has been added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Download PDF feature has been added." />
+    <MESSAGE value="Docstrings added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Docstrings added." />
   </component>
 </project>

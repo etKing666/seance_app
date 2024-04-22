@@ -59,7 +59,7 @@ models (suggestions):  Suggestion table is imported in order to make queries for
 
 import re
 from dataclasses import dataclass, field
-from .models import Suggestions
+from .models import Suggestions, Questions
 
 
 @dataclass
@@ -205,7 +205,7 @@ def main_steps(all_steps):
     steps attribute of the Tracker object.
     """
     for step in all_steps:
-        if re.fullmatch("[0-9]\.[0-9]", step):
+        if re.fullmatch("[0-9]\.[0-9]", step) or re.fullmatch("[0-9]\.[0-9][0-9]", step):
             tracker.steps.append(step)
     return
 
@@ -238,6 +238,14 @@ def record_answers(key, answer, value):
             if query.exists():
                 for q in query:
                     advices.layer1.append(q)
+            else:  # If the key belongs to a child, it may not return a suggestion while it should
+                question = Questions.objects.filter(qid=key)  # Retrieves the question object for the child key
+                query = Suggestions.objects.filter(rquid=question[0].pid)  # Queries for the suggestion tied to parent
+                if query.exists():
+                    for q in query:
+                        if q not in advices.layer1:  # So that we avoid adding duplicates
+                            advices.layer1.append(q)
+
     elif layer == 2:
         answers.layer2[key] = [answer, value]
         scores.layer2 += value
@@ -247,6 +255,14 @@ def record_answers(key, answer, value):
             if query.exists():
                 for q in query:
                     advices.layer2.append(q)
+            else:
+                question = Questions.objects.filter(qid=key)
+                query = Suggestions.objects.filter(rquid=question[0].pid)
+                if query.exists():
+                    for q in query:
+                        if q not in advices.layer2:
+                            advices.layer2.append(q)
+
     elif layer == 3:
         answers.layer3[key] = [answer, value]
         scores.layer3 += value
@@ -256,6 +272,13 @@ def record_answers(key, answer, value):
             if query.exists():
                 for q in query:
                     advices.layer3.append(q)
+            else:
+                question = Questions.objects.filter(qid=key)
+                query = Suggestions.objects.filter(rquid=question[0].pid)
+                if query.exists():
+                    for q in query:
+                        if q not in advices.layer3:
+                            advices.layer3.append(q)
     elif layer == 4:
         answers.layer4[key] = [answer, value]
         scores.layer4 += value
@@ -265,6 +288,13 @@ def record_answers(key, answer, value):
             if query.exists():
                 for q in query:
                     advices.layer4.append(q)
+            else:
+                question = Questions.objects.filter(qid=key)
+                query = Suggestions.objects.filter(rquid=question[0].pid)
+                if query.exists():
+                    for q in query:
+                        if q not in advices.layer4:
+                            advices.layer4.append(q)
     elif layer == 5:
         answers.layer5[key] = [answer, value]
         scores.layer5 += value
@@ -274,6 +304,13 @@ def record_answers(key, answer, value):
             if query.exists():
                 for q in query:
                     advices.layer5.append(q)
+            else:
+                question = Questions.objects.filter(qid=key)
+                query = Suggestions.objects.filter(rquid=question[0].pid)
+                if query.exists():
+                    for q in query:
+                        if q not in advices.layer5:
+                            advices.layer5.append(q)
     elif layer == 6:
         answers.layer6[key] = [answer, value]
         scores.layer6 += value
@@ -283,6 +320,13 @@ def record_answers(key, answer, value):
             if query.exists():
                 for q in query:
                     advices.layer6.append(q)
+            else:
+                question = Questions.objects.filter(qid=key)
+                query = Suggestions.objects.filter(rquid=question[0].pid)
+                if query.exists():
+                    for q in query:
+                        if q not in advices.layer6:
+                            advices.layer6.append(q)
     else:
         raise ValueError
     return

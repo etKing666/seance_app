@@ -260,6 +260,8 @@ def create_dfd(filename):
             employee - Relationship("") - admin
             if param.multi_computer:
                 employee - Relationship("Serves customers using") - regular_computer
+            else:
+                employee - Relationship("Serves customers using") - admin_computer
         else:
             customer - Relationship("Requests for service") - admin
 

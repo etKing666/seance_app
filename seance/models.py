@@ -1,7 +1,16 @@
+""" Models used in the application.
+
+Models:
+_______
+Questions: The model that stores the questions.
+
+Suggestions: The model that stores the suggestions.
+
+The two are standalone tables that are not related with a foreign key.
+"""
+
 from django.db import models
 
-
-# Create your models here.
 
 class Questions(models.Model):
     """The model to store the main questions that is used throughout the web application.
@@ -25,6 +34,8 @@ class Questions(models.Model):
 
     children: A text field that stores in which step the question's children are.
 
+    pid: An integer field that indicates the parent question ID of the children. If question is a parent, it's set to 0.
+
     section: Indicates the layer of the framework that the question belongs to.
 
     value: The "YES" value of the question, meaning the value added to total when "Yes" is selected by the user.
@@ -39,6 +50,7 @@ class Questions(models.Model):
     qtype = models.PositiveSmallIntegerField()
     parent = models.BooleanField(default=False)
     children = models.TextField(default="", blank=True)
+    pid = models.IntegerField(default=0)
     section = models.PositiveSmallIntegerField(default=0, blank=True)
     value = models.IntegerField()
     factor = models.PositiveSmallIntegerField(default=1)
