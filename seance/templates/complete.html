@@ -10,33 +10,73 @@
             <div>
                 {% if scores.overall < 1  %}
                         <div class="alert alert-success text-center" role="alert">
-                          <p>Your overall cyber security risk rating: <b>{{ scores.overall }} / 5</b></p>
+                          <p>Your overall cyber security risk rating: <b style="font-size: larger">{{ scores.overall }} / 5</b></p>
                           <hr>
                           <p class="mb-0 fs-3 fw-bolder">VERY LOW RISK</p>
+                          <hr>
+                          <p style="font-size: xx-small; text-align: justify"><b>Understanding your cyber security
+                          score:</b> Your cyber security score reflects the potential risk level from cyber threats,
+                          ranging from 0 (no risk) to 5 (maximum risk). Scores closer to 0 indicate very low risk,
+                          suggesting strong security measures are in place. As scores approach 5, they signify a
+                          very high risk, indicating urgent improvements are needed to safeguard against cyber threats.
+                          Regular updates and professional advice are recommended to enhance your cyber security
+                          posture.</p>
                         </div>
                 {% elif scores.overall >= 1 and scores.overall < 2 %}
                         <div class="alert alert-success text-center" role="alert">
-                          <p>Your overall cyber security risk rating: <b>{{ scores.overall }} / 5</b></p>
+                          <p>Your overall cyber security risk rating: <b style="font-size: larger">{{ scores.overall }} / 5</b></p>
                           <hr>
                           <p class="mb-0 fs-3 fw-bolder">LOW RISK</p>
+                          <hr>
+                          <p style="font-size: xx-small; text-align: justify"><b>Understanding your cyber security
+                          score:</b> Your cyber security score reflects the potential risk level from cyber threats,
+                          ranging from 0 (no risk) to 5 (maximum risk). Scores closer to 0 indicate very low risk,
+                          suggesting strong security measures are in place. As scores approach 5, they signify a
+                          very high risk, indicating urgent improvements are needed to safeguard against cyber threats.
+                          Regular updates and professional advice are recommended to enhance your cyber security
+                          posture.</p>
                         </div>
                 {% elif scores.overall >= 2 and scores.overall < 3 %}
                     <div class="alert alert-warning text-center" role="alert">
-                      <p>Your overall cybersecurity risk rating: <b>{{ scores.overall }} / 5</b></p>
+                      <p>Your overall cyber security risk rating: <b style="font-size: larger">{{ scores.overall }} / 5</b></p>
                       <hr>
                       <p class="mb-0 fs-3 fw-bolder">MODERATE RISK</p>
+                      <hr>
+                      <p style="font-size: xx-small; text-align: justify"><b>Understanding your cyber security
+                      score:</b> Your cyber security score reflects the potential risk level from cyber threats,
+                      ranging from 0 (no risk) to 5 (maximum risk). Scores closer to 0 indicate very low risk,
+                      suggesting strong security measures are in place. As scores approach 5, they signify a
+                      very high risk, indicating urgent improvements are needed to safeguard against cyber threats.
+                      Regular updates and professional advice are recommended to enhance your cyber security
+                      posture.</p>
                     </div>
                 {% elif scores.overall >= 3 and scores.overall < 4 %}
                     <div class="alert alert-danger text-center" role="alert">
-                      <p>Your overall cybersecurity risk rating: <b>{{ scores.overall }} / 5</b></p>
+                      <p>Your overall cyber security risk rating: <b style="font-size: larger">{{ scores.overall }} / 5</b></p>
                       <hr>
                       <p class="mb-0 fs-3 fw-bolder">HIGH RISK</p>
+                      <hr>
+                      <p style="font-size: xx-small; text-align: justify"><b>Understanding your cyber security
+                      score:</b> Your cyber security score reflects the potential risk level from cyber threats,
+                      ranging from 0 (no risk) to 5 (maximum risk). Scores closer to 0 indicate very low risk,
+                      suggesting strong security measures are in place. As scores approach 5, they signify a
+                      very high risk, indicating urgent improvements are needed to safeguard against cyber threats.
+                      Regular updates and professional advice are recommended to enhance your cyber security
+                      posture.</p>
                     </div>
                 {% elif scores.overall >= 4 %}
                     <div class="alert alert-danger text-center" role="alert">
-                      <p>Your overall cybersecurity risk rating: <b>{{ scores.overall }} / 5</b></p>
+                      <p>Your overall cyber security risk rating: <b style="font-size: larger">{{ scores.overall }} / 5</b></p>
                       <hr>
                       <p class="mb-0 fs-3 fw-bolder">VERY HIGH RISK</p>
+                      <hr>
+                      <p style="font-size: xx-small; text-align: justify"><b>Understanding your cyber security
+                      score:</b> Your cyber security score reflects the potential risk level from cyber threats,
+                      ranging from 0 (no risk) to 5 (maximum risk). Scores closer to 0 indicate very low risk,
+                      suggesting strong security measures are in place. As scores approach 5, they signify a
+                      very high risk, indicating urgent improvements are needed to safeguard against cyber threats.
+                      Regular updates and professional advice are recommended to enhance your cyber security
+                      posture.</p>
                     </div>
                 {% endif %}
             </div>

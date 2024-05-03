@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Docstrings added.">
-      <change afterPath="$PROJECT_DIR$/media/5ISL1E3DIB83.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/8JJ103KFL6DX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/K0C3SWYH8OEZ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seance/migrations/0019_questions_pid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/dfd.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/dfd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/base_pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base_pdf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seance/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +132,8 @@
       <workItem from="1713426835607" duration="86000" />
       <workItem from="1713426937205" duration="19740000" />
       <workItem from="1713603618534" duration="28937000" />
+      <workItem from="1714027519820" duration="57000" />
+      <workItem from="1714135135539" duration="57000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />

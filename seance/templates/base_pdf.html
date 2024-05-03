@@ -12,6 +12,7 @@
         #rating {font-size: 14px;}
         #actions-title {border-top:2px solid black; border-bottom:2px solid black;}
         #disclaimer {font-size: 10px; font-style: italic; background-color: #ecedee; margin: 0; padding: 9px 10px 0;}
+        #fineprint {font-weight: lighter; font-size: 8px; background-color: #ecedee; margin: 0; padding: 9px 10px 0;}
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -45,6 +46,16 @@
             <p id="overall">Your overall cyber security risk rating: <b style="background-color: gold">{{ scores.overall }}</b> / 5<br>
                 <b style="background-color: Red; color: Snow">VERY HIGH RISK</b></p>
         {% endif %}
+    </div>
+    <div>
+        <br>
+    </div>
+    <div id="fineprint">
+        <p style="font-size: 8px;"><b>Understanding your cyber security score:</b> Your cyber security score reflects the potential risk level
+            from cyber threats, ranging from 0 (no risk) to 5 (maximum risk). Scores closer to 0 indicate very low
+            risk, suggesting strong security measures are in place. As scores approach 5, they signify a very high
+            risk, indicating urgent improvements are needed to safeguard against cyber threats. Regular updates and
+            professional advice are recommended to enhance your cyber security posture.</p>
     </div>
     <div>
         <br>
@@ -153,7 +164,7 @@
         <br>
         <div>
                     <h4>About SEANCE Framework</h4>
-                    <p>SEANCE is a threat modelling framework tailored for micro businesses. It was developed by Etkin Getir as part of his MSc in Computer Science dissertation at the University of Essex Online. Read more about the framework <u><a href="about.html">here</a></u>.</p>
+                    <p>SEANCE is a threat modelling framework tailored for micro businesses. It was developed by Etkin Getir as part of his MSc in Computer Science dissertation at the University of Essex Online. Read more about the framework <u><a href="https://seance-framework.com/about/">here</a></u>.</p>
         </div>
         <div>
             <p>© 2024 Etkin Getir. All rights reserved.</p>
