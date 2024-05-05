@@ -36,10 +36,12 @@ class AboutTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_index_accessible_by_name(self):
+        """ Tests if the about page is accessible by name """
         response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, 200)
 
     def test_index_uses_correct_template(self):
+        """ Tests if the home page uses the correct template """
         response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'about.html')
@@ -53,10 +55,12 @@ class ContactTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_contact_accessible_by_name(self):
+        """ Tests if the contact page is accessible by name """
         response = self.client.get(reverse('contact'))
         self.assertEqual(response.status_code, 200)
 
     def test_contact_uses_correct_template(self):
+        """ Tests if the contact page uses the correct template """
         response = self.client.get(reverse('contact'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'contact.html')
@@ -70,10 +74,12 @@ class StartTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_start_accessible_by_name(self):
+        """ Tests if the start page is accessible by name """
         response = self.client.get(reverse('start'))
         self.assertEqual(response.status_code, 200)
 
     def test_start_uses_correct_template(self):
+        """ Tests if the start page uses the correct template """
         response = self.client.get(reverse('start'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'start.html')
@@ -87,10 +93,12 @@ class ApologyTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_apology_accessible_by_name(self):
+        """ Tests if the apology page is accessible by name """
         response = self.client.get(reverse('apology'))
         self.assertEqual(response.status_code, 200)
 
     def test_apology_uses_correct_template(self):
+        """ Tests if the apology page uses the correct template """
         response = self.client.get(reverse('apology'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'apology.html')
@@ -113,10 +121,12 @@ class QuestionsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_questions_accessible_by_name(self):
+        """ Tests if the questions page is accessible by name """
         response = self.client.get(reverse('questions'))
         self.assertEqual(response.status_code, 200)
 
     def test_questions_uses_correct_template(self):
+        """ Tests if the questions page uses the correct template """
         response = self.client.get(reverse('questions'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'questions.html')
@@ -130,10 +140,12 @@ class CompleteTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_complete_not_accessible_by_name(self):
+        """ Tests if the complete page is accessible by name """
         response = self.client.get(reverse('complete'))
         self.assertEqual(response.status_code, 200)
 
     def test_complete_uses_correct_template(self):
+        """ Tests if the complete page uses the correct template """
         response = self.client.get(reverse('complete'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'complete.html')
