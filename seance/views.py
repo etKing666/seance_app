@@ -22,7 +22,7 @@ complete(request):  The function that renders the results page.
 
 apology(request):  The function that renders the apology (error) page.
 
-render(request, template_path, context):  The function that renders the pdf file.
+render_pdf(request, template_path, context):  The function that renders the pdf file.
 
 Imports:
 --------
@@ -109,7 +109,7 @@ def questions(request):
     else:
         if 'download_pdf' in request.POST:
             return render_pdf(request, 'base_pdf.html',
-                              {'answers': answers, 'sections': tracker.sections, 'scores': scores,
+                              {'sections': tracker.sections, 'scores': scores,
                                'suggestions': advices,
                                'fname': tracker.fpath})
         form_data = dict(request.POST)
@@ -196,7 +196,7 @@ def complete(request):
     if request.method == 'POST':
         if 'download_pdf' in request.POST:
             return render_pdf(request, 'complete.html',
-                              {'answers': answers, 'sections': tracker.sections, 'scores': scores,
+                              {'sections': tracker.sections, 'scores': scores,
                                'suggestions': advices,
                                'fname': tracker.fpath})
     else:
