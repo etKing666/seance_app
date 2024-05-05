@@ -12,17 +12,17 @@ from unittest.mock import patch, MagicMock
 class TrackerTestCase(TestCase):
 
     def setUp(self):
-        """ Creates a test tracker object"""
+        """ Creates a test tracker object """
         self.test_tracker = Tracker()
         self.test_tracker.question_base = {1: "Test question 1", 2: "Test question 2"}
         self.test_tracker.steps = ["1.1", "1.2", "1.3"]
 
     def test_tracker_exists(self):
-        """ Tests if the tracker is an instance of Tracker class"""
+        """ Tests if the tracker is an instance of Tracker class """
         self.assertTrue(isinstance(self.test_tracker, Tracker))
 
     def test_tracker_reset(self):
-        """ Tests if reset class method works properly"""
+        """ Tests if reset class method works properly """
         self.test_tracker.current = "1.1"
         self.test_tracker.reset()
         self.assertEqual(self.test_tracker.current, "0.0")
@@ -31,14 +31,14 @@ class TrackerTestCase(TestCase):
 class AnswersTestCase(TestCase):
 
     def setUp(self):
-        """ Creates a test Answers object"""
+        """ Creates a test Answers object """
         self.test_answers = Answers()
         answer_text = {1: "Test answer 1", 2: "Test answer 2", 3: "Test answer 3", 4: "Test answer 4",
                        5: "Test answer 5", 6: "Test answer 6"}
         self.test_answers.layer1, self.test_answers.layer2, self.test_answers.layer3, self.test_answers.layer4, self.test_answers.layer5, self.test_answers.layer6 = answer_text
 
     def test_answers_exists(self):
-        """ Tests if the answers is an instance of Tracker class"""
+        """ Tests if the answers is an instance of Tracker class """
         self.assertTrue(isinstance(self.test_answers, Answers))
 
     def test_answers_reset(self):
@@ -55,11 +55,11 @@ class ScoresTestCase(TestCase):
         self.test_scores.layer1, self.test_scores.layer2, self.test_scores.layer3, self.test_scores.layer4, self.test_scores.layer5, self.test_scores.layer6, self.test_scores.overall = 1.0, 2.0, 3.0, 4.0, 4.5, 4.9, 4.8
 
     def test_scores_exists(self):
-        """ Tests if the scores is an instance of Scores class"""
+        """ Tests if the scores is an instance of Scores class """
         self.assertTrue(isinstance(self.test_scores, Scores))
 
     def test_scores_reset(self):
-        """ Tests if reset class method works properly"""
+        """ Tests if reset class method works properly """
         self.test_scores.reset()
         self.assertEqual(self.test_scores.layer1, 0)
 
@@ -75,11 +75,11 @@ class RecommendationsTestCase(TestCase):
         self.test_recommendations.layer1 = self.test_recommendations.layer2 = self.test_recommendations.layer3 = self.test_recommendations.layer4 = self.test_recommendations.layer5 = self.test_recommendations.layer6 = suggestion
 
     def test_recommendations_exists(self):
-        """ Tests if the recommendations is an instance of Recommendations class"""
+        """ Tests if the recommendations is an instance of Recommendations class """
         self.assertTrue(isinstance(self.test_recommendations, Recommendations))
 
     def test_recommendations_reset(self):
-        """ Tests if reset class method works properly"""
+        """ Tests if reset class method works properly """
         self.test_recommendations.reset()
         self.assertEqual(self.test_recommendations.layer1, [])
 
@@ -135,10 +135,7 @@ class TestRecordAnswers(TestCase):
         query_set_mock.exists.return_value = True
         query_set_mock.__iter__.return_value = [suggestion_mock]
 
-        # Call the function
         record_answers(10100, 'answer', 1)
-
-        # Assert if methods called once
         self.assertTrue(filter_mock.called)
         self.assertTrue(advices_mock.layer1.append.called)
 

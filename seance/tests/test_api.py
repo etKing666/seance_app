@@ -37,21 +37,21 @@ class APITestCase(TestCase):
         self.filename = "Test file"
 
     def test_complete_post(self):
-        # Using the standard RequestFactory API to create a form POST request
+        """ Tests complete view with POST """
         factory = APIRequestFactory()
         request = factory.post('/complete/', {'download_pdf': 'download_pdf'})
         response = complete(request)
         self.assertEqual(response.status_code, 200)
 
     def test_complete_get(self):
-        # Using the standard RequestFactory API to create a form POST request
+        """ Tests complete view with GET """
         factory = APIRequestFactory()
         request = factory.get('/complete/')
         response = complete(request)
         self.assertEqual(response.status_code, 200)
 
     def test_questions_post(self):
-        # Using the standard RequestFactory API to create a form POST request
+        """ Tests questions view with POST """
         factory = APIRequestFactory()
         request = factory.post('/questions/', {'download_pdf': 'download_pdf'})
         response = questions(request)

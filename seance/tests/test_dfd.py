@@ -11,7 +11,7 @@ class TestDFD(unittest.TestCase):
             os.remove("media/test_dfd.png")
 
     def test_create_dfd(self):
-        """Tests if a dfd is created """
+        """ Tests if a dfd is created """
 
         param.multi_admin = True
         param.employee = True

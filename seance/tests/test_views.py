@@ -12,14 +12,17 @@ from seance.helpers import Scores, Recommendations
 class IndexTestCase(TestCase):
 
     def test_index_exists(self):
+        """ Tests if the home page exists """
         response = self.client.get('')
         self.assertEqual(response.status_code, 200)
 
     def test_index_accessible_by_name(self):
+        """ Tests if the home page is accessible by name """
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
 
     def test_index_uses_correct_template(self):
+        """ Tests if the home page uses the correct template """
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
@@ -28,6 +31,7 @@ class IndexTestCase(TestCase):
 class AboutTestCase(TestCase):
 
     def test_about_exists(self):
+        """ Tests if the about page exists """
         response = self.client.get('/about/')
         self.assertEqual(response.status_code, 200)
 
@@ -44,6 +48,7 @@ class AboutTestCase(TestCase):
 class ContactTestCase(TestCase):
 
     def test_contact_exists(self):
+        """ Tests if the contact page exists """
         response = self.client.get('/contact/')
         self.assertEqual(response.status_code, 200)
 
@@ -60,6 +65,7 @@ class ContactTestCase(TestCase):
 class StartTestCase(TestCase):
 
     def test_start_exists(self):
+        """ Tests if the start page exists """
         response = self.client.get('/start/')
         self.assertEqual(response.status_code, 200)
 
@@ -76,6 +82,7 @@ class StartTestCase(TestCase):
 class ApologyTestCase(TestCase):
 
     def test_apology_exists(self):
+        """ Tests if the apology page exists """
         response = self.client.get('/apology/')
         self.assertEqual(response.status_code, 200)
 
@@ -101,6 +108,7 @@ class QuestionsTestCase(TestCase):
         section_name = "Test section"
 
     def test_questions_exists(self):
+        """ Tests if the questions page exists """
         response = self.client.get('/questions/')
         self.assertEqual(response.status_code, 200)
 
@@ -117,6 +125,7 @@ class QuestionsTestCase(TestCase):
 class CompleteTestCase(TestCase):
 
     def test_complete_exists(self):
+        """ Tests if the complete page exists """
         response = self.client.get('/complete/')
         self.assertEqual(response.status_code, 200)
 
@@ -161,6 +170,7 @@ class RenderPdfTestCase(TestCase):
         self.filename = "Test file"
 
     def test_pdf_created(self):
+        """ Tests if a pdf file is created  """
         request = HttpRequest()
         response = render_pdf(request, 'base_pdf.html', {
             'sections': self.sections,
@@ -171,7 +181,7 @@ class RenderPdfTestCase(TestCase):
         self.assertIsInstance(response, HttpResponse)
 
     def test_render_pdf_with_error(self):
-        """Checks if it renders apology page when pisa_status.err is True"""
+        """Tests if apology page is rendered when pisa_status.err is True"""
         client = Client()
 
         # Create a mock pisa_status object with err set to True
