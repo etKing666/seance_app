@@ -2,171 +2,174 @@
 {% load static %}
 
 {% block body %}
-    <section class="clean-block container" style="margin-top:200px;width:1400px;padding-right:200px;padding-left:200px">
-        <div class="container">
-            <div class="row">
-                <h2 class="text-info" style="text-align:center;margin-bottom:15px">Deep dive into SEANCE Threat Modelling Framework</h2>
-                <p align="justify">SEANCE is a threat modelling framework tailored for micro businesses (i.e., businesses with fewer than 10 employees and a turnover of no more than €2 million). It is a non-technical, asset-centric framework that aims to be easily understood and used by micro business (MB) owners who do not have the cybersecurity expertise or resources (i.e. financial and otherwise) to use an existing framework, tool, or system to identify the threats to their business. </p>
-                <figure class="figure"><img class="img-fluid" style="margin:20px" src="{%static "about1.jpg" %}" alt="SEANCE Threat Modelling Framework Overview"></figure>
-                <p align="justify">The SEANCE framework provides for threats to be considered and assessed in six layers, with the general assumption that the most dangerous threat is the closest threat. Therefore, when considering threats to your business, you should think about <b>your:</b></p>
-                <ul style="padding-left: 120px">
-                    <li><b>S</b>elf</li>
-                    <li><b>E</b>mployees</li>
-                    <li><b>A</b>ssets</li>
-                    <li><b>N</b>etwork</li>
-                    <li><b>C</b>ustomers</li>
-                    <li><b>E</b>nvironment</li>
-                </ul>
-                <p align="justify"><img class="img-fluid border-1 float-end border rounded-0" src="{%static "about2.png" %}" style="width:396px;margin:17px;padding:2px;">You can think of your organisation as a medieval castle: The lord (or commander for that matter) of the castle makes all the important decisions <strong>himself</strong> that have an impact on the whole castle. His army of warriors (in local jargon, his <strong>employees</strong>) carry out his decisions by using their weapons and other <strong>assets</strong> in accordance with his wishes. This is not an individual endeavour, however; it requires a castle-wide <strong>network</strong> to coordinate the deployment of weapons and smaller units, with the ultimate goal of keeping the castle's defensive posture in sync. Then there are the people who live within the castle's perimeter, who are usually unaware of their lord's important defensive decisions, and who are more concerned with the livelihood of their household, paying their lord to be exempted from military service - perhaps that's why the lord mocks them by referring to them as his <strong>customers</strong> at his festive dinners (where he may consume too much beer). The castle's <strong>environment</strong> then has a huge impact on the castle's security: Unlike a peaceful castle on a remote island, about which the local population hears (and dreams) a lot, the castle is surrounded by the castles of malevolent neighbouring kingdoms. The lord tries to fortify the castle by digging deep moats around it, filling them with water and putting hungry alligators in them. But there is one thing to remember: No matter what he does to fortify the perimeter, the castle is only as strong as the resilience of the lord and the integrity of his army! Therefore, the ruler prioritises threats from the inside of his castle over those from the outside.</p>
-                <p></p>
-                <p align="justify">Please note that SEANCE Micro Business Threat Modelling Framework is not intended to be a complete cyber security solution for micro businesses, but rather to improve their cyber security posture by raising awareness of cyber threats and providing a starting point for implementing industry standard security controls.</p>
-                <p align="justify">Let's now dive into the six layers of the SEANCE framework, starting from the innermost layer and working our way outwards. You may notice that some themes, such as "Setting up firewalls", appear in more than one layer, because they are relevant to different layers.</p>
-                <div class="accordion" role="tablist" id="accordion-1">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-primary-subtle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="false" aria-controls="accordion-1 .item-1"><strong>Layer 1: Self</strong></button></h2>
-                        <div class="accordion-collapse collapse item-1 item-1 item-1" role="tabpanel" data-bs-parent="#accordion-1">
-                            <div class="accordion-body">
-                                <p class="mb-0" style="padding:8px;" align="justify">This is the innermost layer, where you consider the threats to yourself as well as the security controls you set up and manage. If your business is not wholly owned or controlled by you and you have other partners, they should also be considered in this layer.</p>
-                                <div class="table-responsive border-1 border-black">
-                                    <table class="table table-striped-columns table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th><span style="text-decoration:underline;">Key Themes</span></th>
-                                                <th><span style="text-decoration:underline;">Guiding Questions</span></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Business owner(s)<br><br>Administrators<br><br>Organisation-wide security controls<br><br>Password policy<br><br>Incident Response Plan<br><br>Business Continuity<br> Plan<br><br>Cyber Security Insurance<br><br><br><br><br><br><br><br><br><br></td>
-                                                <td><strong>Are you the sole owner of the business or are there other shareholders/partners who run the business with you?</strong><br><br>-&gt; How many shareholders/partners do you have?<br><br><strong>Do you carry out the administrative tasks yourself, or do you have a designated admin?</strong><br><br>-&gt; Do you share your admin password with anyone else?<br><br><strong>Do you have and enforce a password policy?</strong><br><br>-&gt; Does your password policy recommend that users create a different and unique password for each system they access?<br><br>-&gt; Does it provide guidance to users on how to create <a href="https://getreadyforcyberessentials.iasme.co.uk/guidance/about-password-creation/">strong passwords</a>?<br><br>-&gt; Does it specify the technical controls for measuring and managing the quality of passwords?<br><br>-> Is there a process in place to detect and change the compromised passwords?<br><br>-&gt; Are there any safeguards in place to prevent passwords from being guessed by randomly trying all possible combinations (also known as “<a href="https://csrc.nist.gov/glossary/term/brute_force_password_attack">Brute Force</a>”)?<br><br><strong>Do you have a policy for creating and deleting user accounts?</strong><br><br>-&gt;&nbsp; Is there a policy for creating a new user account?<br><br>-&gt; Are there any procedures in place to monitor user accounts as employees join and leave the organisation?<br><br><strong>Do you have a policy for managing administrator accounts?</strong><br><br>-&gt;&nbsp; Are you the only user with administrator privileges in the administration?&nbsp;<br><br>-&gt; If you are the only administrator in the organisation, do you share your admin account credentials with anyone else?<br><br>-&gt; Do you have a specific procedure that you follow and/or do you require an employee to go through a specific process before granting administrative privileges to an employee?<br><br>-&gt; Are there procedures to keep administrator users from using administrator accounts for everyday tasks/activities?<br><br>-&gt; Are administrator passwords protected by <a href="https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication">multi-factor authentication</a> (MFA)?<br><br><strong>Do you have an incident response plan in place in the event of a cyber security incident?</strong><br><br>-&gt; Are you aware of any possible legal reporting requirements and/or information sharing with the legal authorities?<br><br><strong>Do you have a business continuity plan to get your business back up and running as quickly as possible?&nbsp;</strong><br><br><strong>Do you have a </strong><a href="https://www.ftc.gov/business-guidance/small-businesses/cybersecurity/cyber-insurance"><strong>cyber security insurance</strong></a><strong> in place to cover or reduce the financial risks caused by cyber security events?</strong></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+    <section class="clean-block container" style="margin-top:200px">
+        <div class="container-fluid">
+            <div class="row mx-xl-5">
+                <div class="col">
+                    <h2 class="text-info" style="text-align:center;margin-bottom:15px">Deep dive into SEANCE Threat Modelling Framework</h2>
+                    <p align="justify">SEANCE is a threat modelling framework tailored for micro businesses (i.e., businesses with fewer than 10 employees and a turnover of no more than €2 million). It is a non-technical, asset-centric framework that aims to be easily understood and used by micro business (MB) owners who do not have the cybersecurity expertise or resources (i.e. financial and otherwise) to use an existing framework, tool, or system to identify the threats to their business. </p>
+                    <img class="img-fluid mx-auto d-block" style="margin:20px;width: 1000px" src="{%static "about1.jpg" %}" alt="SEANCE Threat Modelling Framework Overview">
+                    <p align="justify">The SEANCE framework provides for threats to be considered and assessed in six layers, with the general assumption that the most dangerous threat is the closest threat. Therefore, when considering threats to your business, you should think about <b>your:</b></p>
+                    <ul style="padding-left: 120px">
+                        <li><b>S</b>elf</li>
+                        <li><b>E</b>mployees</li>
+                        <li><b>A</b>ssets</li>
+                        <li><b>N</b>etwork</li>
+                        <li><b>C</b>ustomers</li>
+                        <li><b>E</b>nvironment</li>
+                    </ul>
+                    <img class="img-fluid border-1 float-end border rounded-0" src="{%static "about2.png" %}" style="width:450px;margin:17px;padding:2px;">
+                    <p align="justify">You can think of your organisation as a medieval castle: The lord (or commander for that matter) of the castle makes all the important decisions <strong>himself</strong> that have an impact on the whole castle. His army of warriors (in local jargon, his <strong>employees</strong>) carry out his decisions by using their weapons and other <strong>assets</strong> in accordance with his wishes. This is not an individual endeavour, however; it requires a castle-wide <strong>network</strong> to coordinate the deployment of weapons and smaller units, with the ultimate goal of keeping the castle's defensive posture in sync. Then there are the people who live within the castle's perimeter, who are usually unaware of their lord's important defensive decisions, and who are more concerned with the livelihood of their household, paying their lord to be exempted from military service - perhaps that's why the lord mocks them by referring to them as his <strong>customers</strong> at his festive dinners (where he may consume too much beer). The castle's <strong>environment</strong> then has a huge impact on the castle's security: Unlike a peaceful castle on a remote island, about which the local population hears (and dreams) a lot, the castle is surrounded by the castles of malevolent neighbouring kingdoms. The lord tries to fortify the castle by digging deep moats around it, filling them with water and putting hungry alligators in them. But there is one thing to remember: No matter what he does to fortify the perimeter, the castle is only as strong as the resilience of the lord and the integrity of his army! Therefore, the ruler prioritises threats from the inside of his castle over those from the outside.</p>
+                    <p></p>
+                    <p align="justify">Please note that SEANCE Micro Business Threat Modelling Framework is not intended to be a complete cyber security solution for micro businesses, but rather to improve their cyber security posture by raising awareness of cyber threats and providing a starting point for implementing industry standard security controls.</p>
+                    <p align="justify">Let's now dive into the six layers of the SEANCE framework, starting from the innermost layer and working our way outwards. You may notice that some themes, such as "Setting up firewalls", appear in more than one layer, because they are relevant to different layers.</p>
+                    <div class="accordion" role="tablist" id="accordion-1">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-primary-subtle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="false" aria-controls="accordion-1 .item-1"><strong>Layer 1: Self</strong></button></h2>
+                            <div class="accordion-collapse collapse item-1 item-1 item-1" role="tabpanel" data-bs-parent="#accordion-1">
+                                <div class="accordion-body">
+                                    <p class="mb-0" style="padding:8px;" align="justify">This is the innermost layer, where you consider the threats to yourself as well as the security controls you set up and manage. If your business is not wholly owned or controlled by you and you have other partners, they should also be considered in this layer.</p>
+                                    <div class="table-responsive border-1 border-black">
+                                        <table class="table table-striped-columns table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th><span style="text-decoration:underline;">Key Themes</span></th>
+                                                    <th><span style="text-decoration:underline;">Guiding Questions</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Business owner(s)<br><br>Administrators<br><br>Organisation-wide security controls<br><br>Password policy<br><br>Incident Response Plan<br><br>Business Continuity<br> Plan<br><br>Cyber Security Insurance<br><br><br><br><br><br><br><br><br><br></td>
+                                                    <td><strong>Are you the sole owner of the business or are there other shareholders/partners who run the business with you?</strong><br><br>-&gt; How many shareholders/partners do you have?<br><br><strong>Do you carry out the administrative tasks yourself, or do you have a designated admin?</strong><br><br>-&gt; Do you share your admin password with anyone else?<br><br><strong>Do you have and enforce a password policy?</strong><br><br>-&gt; Does your password policy recommend that users create a different and unique password for each system they access?<br><br>-&gt; Does it provide guidance to users on how to create <a href="https://getreadyforcyberessentials.iasme.co.uk/guidance/about-password-creation/">strong passwords</a>?<br><br>-&gt; Does it specify the technical controls for measuring and managing the quality of passwords?<br><br>-> Is there a process in place to detect and change the compromised passwords?<br><br>-&gt; Are there any safeguards in place to prevent passwords from being guessed by randomly trying all possible combinations (also known as “<a href="https://csrc.nist.gov/glossary/term/brute_force_password_attack">Brute Force</a>”)?<br><br><strong>Do you have a policy for creating and deleting user accounts?</strong><br><br>-&gt;&nbsp; Is there a policy for creating a new user account?<br><br>-&gt; Are there any procedures in place to monitor user accounts as employees join and leave the organisation?<br><br><strong>Do you have a policy for managing administrator accounts?</strong><br><br>-&gt;&nbsp; Are you the only user with administrator privileges in the administration?&nbsp;<br><br>-&gt; If you are the only administrator in the organisation, do you share your admin account credentials with anyone else?<br><br>-&gt; Do you have a specific procedure that you follow and/or do you require an employee to go through a specific process before granting administrative privileges to an employee?<br><br>-&gt; Are there procedures to keep administrator users from using administrator accounts for everyday tasks/activities?<br><br>-&gt; Are administrator passwords protected by <a href="https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication">multi-factor authentication</a> (MFA)?<br><br><strong>Do you have an incident response plan in place in the event of a cyber security incident?</strong><br><br>-&gt; Are you aware of any possible legal reporting requirements and/or information sharing with the legal authorities?<br><br><strong>Do you have a business continuity plan to get your business back up and running as quickly as possible?&nbsp;</strong><br><br><strong>Do you have a </strong><a href="https://www.ftc.gov/business-guidance/small-businesses/cybersecurity/cyber-insurance"><strong>cyber security insurance</strong></a><strong> in place to cover or reduce the financial risks caused by cyber security events?</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-secondary-subtle collapsed collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-2" aria-expanded="false" aria-controls="accordion-1 .item-2"><strong>Layer 2: Employees</strong></button></h2>
+                            <div class="accordion-collapse collapse item-2 item-2 item-2" role="tabpanel" data-bs-parent="#accordion-1">
+                                <div class="accordion-body">
+                                    <p class="mb-0" align="justify" style="padding: 8px;">This layer consists of considerations related to all of your organisation's employees. This can include full-time and part-time employees, as well as volunteers, temporary or seasonal workers, etc.</p>
+                                    <div class="table-responsive border-1 border-black">
+                                        <table class="table table-striped-columns table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th><span style="text-decoration:underline;">Key Themes</span></th>
+                                                    <th><span style="text-decoration:underline;">Guiding Questions</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Number of employees<br><br>Remote employees<br><br>User accounts<br><br>User training</td>
+                                                    <td><strong>How many employees do you have?</strong><br><br><strong>Do you have any remote employees who need to access to company assets remotely?&nbsp;</strong><br><br>-&gt; How many remote employees do you have?<br><br>-&gt; Do any remote employees have administrator privileges?<br><br>-&gt; Do remote employees change their computer/smartphone settings to stop automatic connections to public Wi-Fi?<br><br>-&gt; Do remote employees enable full disk encryption on the devices that they use to connect to your network?<br><br>-&gt; Do you require the employees to use secure connections when connecting remotely to your network? These measures may include:<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(1)&nbsp; Using a router with WPA2 or WPA3 encryption when connecting from home.<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(2) Using a VPN when connecting via public Wi-Fi.<br><br><strong>Do you regularly brief and train all employees on the procedures and processes related to the organisation's cyber security measures and policies?</strong><br><br>-&gt; Do our employees know how to recognise and report common attacks (e.g. <a href="https://www.ftc.gov/business-guidance/small-businesses/cybersecurity/phishing https:/www.nist.gov/itl/smallbusinesscyber/guidance-topic/phishing">phishing</a>, <a href="https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/ransomware">ransomware</a>, etc.)?<br><br>-&gt;&nbsp; Do your employees know how to perform basic <a href="https://sopa.tulane.edu/blog/cyber-hygiene">cyber hygiene</a> tasks?<br><br><strong>Do you have a password policy for the users?&nbsp;</strong><br><br>-&gt; Does it encourage/enforce users to choose unique and strong passwords for their accounts?<br><br>-&gt; Does it enforce that everyone uses their own account and that there are no shared accounts?<br><br></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-success-subtle collapsed collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-3" aria-expanded="false" aria-controls="accordion-1 .item-3"><strong>Layer 3: Assets</strong></button></h2>
+                            <div class="accordion-collapse collapse item-3 item-3 item-3" role="tabpanel" data-bs-parent="#accordion-1">
+                                <div class="accordion-body">
+                                    <p class="mb-0" style="padding: 8px;" align="justify">This layer includes all the assets your organisation owns. An asset can be broadly described as something of value to your business that you want to protect. Assets include computers, servers, data stores, websites, thin clients, self-service terminals, tablets, smartphones and any other device or digital tool that is essential to the business or that are used by you and your employees.</p>
+                                    <div class="table-responsive border-1 border-black">
+                                        <table class="table table-striped-columns table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th><span style="text-decoration:underline;">Key Themes</span></th>
+                                                    <th><span style="text-decoration:underline;">Guiding Questions</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Computers (desktops, laptops, thin clients, terminals, etc.)<br><br>Servers<br><br>Cloud services<br><br>Web sites<br><br>Email accounts<br><br>IoT devices<br><br>Anti-virus/malware protection<br><br>Software/firmware updates<br><br>Data security<br><br>Data backups<br><br>Point of Sale (POS) System</td>
+                                                    <td><strong>How many computers do you use to run your business? Consider all the desktop and laptop computers that you use to store data, manage orders, and communicate with the customers.</strong><br><br><strong>Do you keep an inventory of your assets?</strong><br><br>-&gt; Do you keep track of the designated users and administrators of each device?<br><br>-&gt; Do you record the type of data that is stored on each device?<br><br>-&gt; Do you assess the risk of losing access to each device?<br><br><strong>Do you operate your own servers?</strong><br><br>-&gt; Do you administer the servers yourself or do you delegate this to one of your employees?<br><br>-&gt; Do you have procedures for who can access and configure servers and how?<br><br><strong>Do you use a cloud service provider to store data, run a business application, etc.?</strong><br><br>-&gt; Have you enabled MFA for the administrator and user accounts to access and/or manage the cloud services securely?<br><br>-&gt; Do you administer the cloud services yourself or do you delegate it to one of your employees?<br><br>-&gt; Is the administrator account shared between you and your employees, or is it kept confidential for one user?<br><br>-&gt; Is the administrator account used for day-to-day activities?<br><br>-&gt; Are you aware of the Shared Responsibility Model?<br><br><strong>Do you use Software as a Service (SaaS) products such as Google Docs, Microsoft365, etc.?</strong><br><br><strong>Do you use IoT devices?</strong><br><br>-&gt; Have you changed the default passwords? Have you set strong passwords?<br><br>-&gt; Do you keep the software/firmware up to date?<br><br><strong>Have you enabled automatic updates for all of your applications, including the operating system (OS)?</strong><br><br>-&gt; If not, do you have a process in place to apply all critical updates in a reasonable amount of time?<br><br><strong>Are you using software that is no longer supported?</strong><br><br>-&gt; If so, do you disconnect the devices that are running unsupported software from the Internet?<br><br><strong>Do you review your devices regularly and disable or remove unused software?</strong><br><br><strong>Are you making sure that all accounts on your devices and cloud services are only those that are used as part of your day-to-day business?</strong><br><br><strong>Have you disabled Auto-Run and Auto-Play on all your devices?</strong><br><br><strong>Do you lock your mobile devices with a locking mechanism like a password, fingerprint, facial recognition, etc.?</strong><br><br><strong>Do you ensure that all default passwords on all devices are changed?</strong><br><br><strong>Have you taken necessary measues to protect your devices (including computers, laptops, tablets and mobile devices) against malware by installing anti-malware software or only allowing a certain set of apps to be installed?</strong><br><br><strong>Do you restrict the installation of third-party (unsigned) applications outside the official application stores?</strong><br><br><strong>Do you keep your sensitive and critical data encrypted when it is stored (at rest) or while it is being transmitted (in transit)?</strong><br><br>-&gt; Do you enable full disk encryption (FDE) on your devices?<br><br>-&gt; If FDE is not enabled or available, do you encrypt sensitive files, folders, or databases individually?<br><br>-&gt; Do you use Virtual Private Network (VPN) solutions to encrypt the network traffic?<br><br><strong>Do you securely delete and/or destroy the data that is no longer in use?</strong><br><br><strong>Do you have a procedure in place for regularly backing up your data? If so:</strong><br><br>-&gt; How often do you back up your data?<br><br>-&gt; If you need to restore data from the last backup, how long does it take?<br><br><strong>Do you have a website? If so:</strong><br><br>-&gt; Do you have an SSL certificate?<br><br>-&gt; Are you using HTTPS instead of HTTP?<br><br>-&gt; Do you have a Web Application Firewall (WAF) in place?&nbsp;<br><br>-&gt; Do you allow users to create accounts on your website? If so:<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Do you enforce Multi-Factor Authentication (MFA) for the users?&nbsp;<br>&nbsp;<br>-&gt; Do you accept online orders on your website?<br><br>-&gt; Do you accept online payments? If so:<br><br><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong>- Is your payment service provider PCI DSS compliant?&nbsp;<br><br><strong>Do you have procedures in place to safely dispose of and destroy devices (i.e. hard drives, flash drives, etc.) that are no longer in use?</strong><br><br><strong>Do you use a Point of Sale (POS) system? If so:</strong><br><br>-&gt; Is your system PCI DSS compliant?<br><br>-&gt; Do you keep the POS devices physically secure?<br><br>-&gt; Do you keep POS software and firmware up to date?<br><br>-&gt; Do you monitor POS device activity for potential suspicious activity?<br><br>-&gt; Have you changed the default passwords on your POS devices, and do you keep your passwords secure?<br><br>-&gt; Do you keep POS devices secure after hours?<br><br>-&gt; Do you have a clear policy on who can use POS devices?<br><br>-&gt; Is your POS system connected to a network to which customers and visitors can connect?<br><br></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-danger-subtle collapsed collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-4" aria-expanded="false" aria-controls="accordion-1 .item-4"><strong>Layer4: Network</strong></button></h2>
+                            <div class="accordion-collapse collapse item-4 item-4 item-4" role="tabpanel" data-bs-parent="#accordion-1">
+                                <div class="accordion-body">
+                                    <p class="mb-0" align="justify" style="padding: 8px;">Network is the digital heartbeat of your micro business, seamlessly connecting all your devices - like computers, tablets, and smartphones - so they can talk to each other and the wider world. Think of it like a team of friends who can easily talk, share photos, or even work on projects together, regardless of where they are. This setup helps your business run more efficiently, enabling tasks like sending emails, sharing files, and accessing the internet seamlessly.</p>
+                                    <div class="table-responsive border-1 border-black">
+                                        <table class="table table-striped-columns table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th><span style="text-decoration:underline;">Key Themes</span></th>
+                                                    <th><span style="text-decoration:underline;">Guiding Questions</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Firewall<br><br>Routers<br><br>Internet access<br><br>Wi-Fi network<br><br>Cloud services<br><br>Shared Responsibility Model<br><br>Managed Service Provider (MSP)<br><br>Service Level Agreement (SLA)<br><br>Network monitoring</td>
+                                                    <td><strong>Is your business network protected by a </strong><a href="https://www.cisa.gov/news-events/news/understanding-firewalls-home-and-small-office-use"><strong>firewall</strong></a><strong> (or a router with firewall capability)? If so:</strong><br><br>-&gt; Have you changed all passwords from the default passwords on your firewalls and internet gateways and are all passwords difficult to guess?<br><br>-&gt; If you thought that passwords had been exposed (i.e. someone who knew your password had left the organisation), would you be aware of this and change the password?<br><br><strong>Do you have any services enabled that can be accessed externally?</strong><br><strong>Can your routers or hardware firewalls be configured remotely over the Internet? If so:</strong><br><br>-&gt; Have you secured the administrator account and passwords and not shared them across the organisation?<br><br><strong>Have you configured your routers or your hardware firewalls to block all other services being advertised to the Internet?</strong><br><br><strong>Do you keep the firmware on your router(s) updated?</strong><br><br><strong>Do you use the services of a third-party Managed Service Provider (MSP) to manage your network and network devices and to monitor the devices and networks for suspicious activity? If so:</strong><br><br>-&gt; Is there an appropriate SLA between you and the MSP?<br><br><strong>Do you use </strong><a href="https://getreadyforcyberessentials.iasme.co.uk/guidance/guidance-about-the-cloud/"><strong>cloud services</strong></a><strong> in your organisation? If so:</strong><br><br>-&gt; Do you have a list of the cloud services you use?&nbsp;<br><br>-&gt; Have you enabled MFA for the administrator and user accounts to access and/or manage the cloud services you use?<br><br>-&gt; Have you located and understood the <a href="https://cloudsecurityalliance.org/blog/2020/08/26/shared-responsibility-model-explained">shared responsibility model</a> for the cloud services you use?&nbsp;<br><br><strong>Do you allow people outside your organisation (e.g. customers, suppliers, etc.) to connect to the same Wi-Fi network that your business assets are connected to? If so:</strong><br><br>-&gt; Have you ensured that the business assets are behind a firewall?&nbsp;</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-warning-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-5" aria-expanded="false" aria-controls="accordion-1 .item-5"><strong>Layer 5: Customers</strong></button></h2>
+                            <div class="accordion-collapse collapse item-5" role="tabpanel" data-bs-parent="#accordion-1">
+                                <div class="accordion-body">
+                                    <p class="mb-0" style="padding: 8px;" align="justify">While customers are vital to the financial longevity of your business, they also need to be treated with the utmost care when it comes to your organisation's cyber security. As they are the most important group of people outside the organisation, you should carefully manage the relationship between customers and business assets. On the other hand, although they are external to the organisation, customers need to penetrate the external boundaries of the organisation in a structured way in order to receive services from you.</p>
+                                    <div class="table-responsive border-1 border-black">
+                                        <table class="table table-striped-columns table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 125.195px;"><span style="text-decoration:underline;">Key Themes</span></th>
+                                                    <th><span style="text-decoration:underline;">Guiding Questions</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Privacy<br><br>Wi-Fi network</td>
+                                                    <td><strong>Do you collect </strong><a href="https://www.technology.pitt.edu/help-desk/how-to-documents/guide-identifying-personally-identifiable-information-pii"><strong>personally identifiable information</strong></a><strong> (PII) from customers for any purpose (marketing, research, etc.)?</strong><br><br><strong>Do you allow users to create and maintain accounts on your site? If so:</strong><br><br>-&gt; Do you comply with the privacy regulations depending on your jurisdiction (e.g. <a href="https://eur-lex.europa.eu/eli/reg/2016/679">GDPR</a>, <a href="https://www.gov.uk/data-protection">DPA</a>, etc.)?<br><br>-&gt; Do you enforce Multi-Factor Authentication (MFA) for the users?<br><br>-&gt; In the unlikely event of a customer data breach, do you have a process in place to notify and update affected customers?<br><br><strong>Do you allow customers to connect to the same Wi-Fi network that your business assets are connected to? If so:</strong><br><br>-&gt; Have you ensured that the business assets are behind a firewall?<br><br><strong>How do customers interact with your assets, network, employees, and yourself?</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" role="tab"><button class="accordion-button bg-info-subtle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-6" aria-expanded="true" aria-controls="accordion-1 .item-6"><strong>Layer 6: Environment</strong></button></h2>
+                            <div class="accordion-collapse collapse collapse item-6 item-6 item-6" role="tabpanel" data-bs-parent="#accordion-1">
+                                <div class="accordion-body">
+                                    <p class="mb-0" style="padding: 8px;" align="justify">The outermost layer refers to the external boundaries of your organisation. So far, all considerations have been about the assets and people that are part of the organisation, including customers as explained in the previous layer. This layer considers all threats and threat actors outside the organisation's perimeter.</p>
+                                    <div class="table-responsive border-1 border-black">
+                                        <table class="table table-striped-columns table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th><span style="text-decoration:underline;">Key Themes</span></th>
+                                                    <th><span style="text-decoration:underline;">Guiding Questions</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Non-organisational<br>people<br><br>Firewall<br><br>Physical security controls<br><br>Fire safety<br><br>Power outage<br><br>Theft</td>
+                                                    <td><strong>Do you have a firewall enabled to filter/block incoming external traffic?</strong><br><br><strong>Approximately how many people from outside your organisation, other than customers, visit your workplace (per day/week/month/year)? Think of suppliers, government officials, etc.</strong><br><br>-&gt; Do you keep a record of the non-organisational visitors?<br><br>-&gt; Have you noticed a sudden increase in the number of non-organisational visitors?<br><br>-&gt; Do you allow them to connect to your Wi-Fi network?<br><br><strong>Do you have physical security controls (e.g. cameras, locks, etc.) in place to secure the external perimeter of the organisation?&nbsp;</strong><br><br><strong>Do you have the necessary fire safety measures in place, including smoke detectors and fire extinguishers?&nbsp;</strong><br><br><strong>Do you have uninterruptible power supplies (UPS) in place to keep critical equipment running and prevent data loss in the event of a power outage?&nbsp;</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-secondary-subtle collapsed collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-2" aria-expanded="false" aria-controls="accordion-1 .item-2"><strong>Layer 2: Employees</strong></button></h2>
-                        <div class="accordion-collapse collapse item-2 item-2 item-2" role="tabpanel" data-bs-parent="#accordion-1">
-                            <div class="accordion-body">
-                                <p class="mb-0" align="justify" style="padding: 8px;">This layer consists of considerations related to all of your organisation's employees. This can include full-time and part-time employees, as well as volunteers, temporary or seasonal workers, etc.</p>
-                                <div class="table-responsive border-1 border-black">
-                                    <table class="table table-striped-columns table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th><span style="text-decoration:underline;">Key Themes</span></th>
-                                                <th><span style="text-decoration:underline;">Guiding Questions</span></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Number of employees<br><br>Remote employees<br><br>User accounts<br><br>User training</td>
-                                                <td><strong>How many employees do you have?</strong><br><br><strong>Do you have any remote employees who need to access to company assets remotely?&nbsp;</strong><br><br>-&gt; How many remote employees do you have?<br><br>-&gt; Do any remote employees have administrator privileges?<br><br>-&gt; Do remote employees change their computer/smartphone settings to stop automatic connections to public Wi-Fi?<br><br>-&gt; Do remote employees enable full disk encryption on the devices that they use to connect to your network?<br><br>-&gt; Do you require the employees to use secure connections when connecting remotely to your network? These measures may include:<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(1)&nbsp; Using a router with WPA2 or WPA3 encryption when connecting from home.<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(2) Using a VPN when connecting via public Wi-Fi.<br><br><strong>Do you regularly brief and train all employees on the procedures and processes related to the organisation's cyber security measures and policies?</strong><br><br>-&gt; Do our employees know how to recognise and report common attacks (e.g. <a href="https://www.ftc.gov/business-guidance/small-businesses/cybersecurity/phishing https:/www.nist.gov/itl/smallbusinesscyber/guidance-topic/phishing">phishing</a>, <a href="https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/ransomware">ransomware</a>, etc.)?<br><br>-&gt;&nbsp; Do your employees know how to perform basic <a href="https://sopa.tulane.edu/blog/cyber-hygiene">cyber hygiene</a> tasks?<br><br><strong>Do you have a password policy for the users?&nbsp;</strong><br><br>-&gt; Does it encourage/enforce users to choose unique and strong passwords for their accounts?<br><br>-&gt; Does it enforce that everyone uses their own account and that there are no shared accounts?<br><br></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-success-subtle collapsed collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-3" aria-expanded="false" aria-controls="accordion-1 .item-3"><strong>Layer 3: Assets</strong></button></h2>
-                        <div class="accordion-collapse collapse item-3 item-3 item-3" role="tabpanel" data-bs-parent="#accordion-1">
-                            <div class="accordion-body">
-                                <p class="mb-0" style="padding: 8px;" align="justify">This layer includes all the assets your organisation owns. An asset can be broadly described as something of value to your business that you want to protect. Assets include computers, servers, data stores, websites, thin clients, self-service terminals, tablets, smartphones and any other device or digital tool that is essential to the business or that are used by you and your employees.</p>
-                                <div class="table-responsive border-1 border-black">
-                                    <table class="table table-striped-columns table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th><span style="text-decoration:underline;">Key Themes</span></th>
-                                                <th><span style="text-decoration:underline;">Guiding Questions</span></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Computers (desktops, laptops, thin clients, terminals, etc.)<br><br>Servers<br><br>Cloud services<br><br>Web sites<br><br>Email accounts<br><br>IoT devices<br><br>Anti-virus/malware protection<br><br>Software/firmware updates<br><br>Data security<br><br>Data backups<br><br>Point of Sale (POS) System</td>
-                                                <td><strong>How many computers do you use to run your business? Consider all the desktop and laptop computers that you use to store data, manage orders, and communicate with the customers.</strong><br><br><strong>Do you keep an inventory of your assets?</strong><br><br>-&gt; Do you keep track of the designated users and administrators of each device?<br><br>-&gt; Do you record the type of data that is stored on each device?<br><br>-&gt; Do you assess the risk of losing access to each device?<br><br><strong>Do you operate your own servers?</strong><br><br>-&gt; Do you administer the servers yourself or do you delegate this to one of your employees?<br><br>-&gt; Do you have procedures for who can access and configure servers and how?<br><br><strong>Do you use a cloud service provider to store data, run a business application, etc.?</strong><br><br>-&gt; Have you enabled MFA for the administrator and user accounts to access and/or manage the cloud services securely?<br><br>-&gt; Do you administer the cloud services yourself or do you delegate it to one of your employees?<br><br>-&gt; Is the administrator account shared between you and your employees, or is it kept confidential for one user?<br><br>-&gt; Is the administrator account used for day-to-day activities?<br><br>-&gt; Are you aware of the Shared Responsibility Model?<br><br><strong>Do you use Software as a Service (SaaS) products such as Google Docs, Microsoft365, etc.?</strong><br><br><strong>Do you use IoT devices?</strong><br><br>-&gt; Have you changed the default passwords? Have you set strong passwords?<br><br>-&gt; Do you keep the software/firmware up to date?<br><br><strong>Have you enabled automatic updates for all of your applications, including the operating system (OS)?</strong><br><br>-&gt; If not, do you have a process in place to apply all critical updates in a reasonable amount of time?<br><br><strong>Are you using software that is no longer supported?</strong><br><br>-&gt; If so, do you disconnect the devices that are running unsupported software from the Internet?<br><br><strong>Do you review your devices regularly and disable or remove unused software?</strong><br><br><strong>Are you making sure that all accounts on your devices and cloud services are only those that are used as part of your day-to-day business?</strong><br><br><strong>Have you disabled Auto-Run and Auto-Play on all your devices?</strong><br><br><strong>Do you lock your mobile devices with a locking mechanism like a password, fingerprint, facial recognition, etc.?</strong><br><br><strong>Do you ensure that all default passwords on all devices are changed?</strong><br><br><strong>Have you taken necessary measues to protect your devices (including computers, laptops, tablets and mobile devices) against malware by installing anti-malware software or only allowing a certain set of apps to be installed?</strong><br><br><strong>Do you restrict the installation of third-party (unsigned) applications outside the official application stores?</strong><br><br><strong>Do you keep your sensitive and critical data encrypted when it is stored (at rest) or while it is being transmitted (in transit)?</strong><br><br>-&gt; Do you enable full disk encryption (FDE) on your devices?<br><br>-&gt; If FDE is not enabled or available, do you encrypt sensitive files, folders, or databases individually?<br><br>-&gt; Do you use Virtual Private Network (VPN) solutions to encrypt the network traffic?<br><br><strong>Do you securely delete and/or destroy the data that is no longer in use?</strong><br><br><strong>Do you have a procedure in place for regularly backing up your data? If so:</strong><br><br>-&gt; How often do you back up your data?<br><br>-&gt; If you need to restore data from the last backup, how long does it take?<br><br><strong>Do you have a website? If so:</strong><br><br>-&gt; Do you have an SSL certificate?<br><br>-&gt; Are you using HTTPS instead of HTTP?<br><br>-&gt; Do you have a Web Application Firewall (WAF) in place?&nbsp;<br><br>-&gt; Do you allow users to create accounts on your website? If so:<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Do you enforce Multi-Factor Authentication (MFA) for the users?&nbsp;<br>&nbsp;<br>-&gt; Do you accept online orders on your website?<br><br>-&gt; Do you accept online payments? If so:<br><br><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong>- Is your payment service provider PCI DSS compliant?&nbsp;<br><br><strong>Do you have procedures in place to safely dispose of and destroy devices (i.e. hard drives, flash drives, etc.) that are no longer in use?</strong><br><br><strong>Do you use a Point of Sale (POS) system? If so:</strong><br><br>-&gt; Is your system PCI DSS compliant?<br><br>-&gt; Do you keep the POS devices physically secure?<br><br>-&gt; Do you keep POS software and firmware up to date?<br><br>-&gt; Do you monitor POS device activity for potential suspicious activity?<br><br>-&gt; Have you changed the default passwords on your POS devices, and do you keep your passwords secure?<br><br>-&gt; Do you keep POS devices secure after hours?<br><br>-&gt; Do you have a clear policy on who can use POS devices?<br><br>-&gt; Is your POS system connected to a network to which customers and visitors can connect?<br><br></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-danger-subtle collapsed collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-4" aria-expanded="false" aria-controls="accordion-1 .item-4"><strong>Layer4: Network</strong></button></h2>
-                        <div class="accordion-collapse collapse item-4 item-4 item-4" role="tabpanel" data-bs-parent="#accordion-1">
-                            <div class="accordion-body">
-                                <p class="mb-0" align="justify" style="padding: 8px;">Network is the digital heartbeat of your micro business, seamlessly connecting all your devices - like computers, tablets, and smartphones - so they can talk to each other and the wider world. Think of it like a team of friends who can easily talk, share photos, or even work on projects together, regardless of where they are. This setup helps your business run more efficiently, enabling tasks like sending emails, sharing files, and accessing the internet seamlessly.</p>
-                                <div class="table-responsive border-1 border-black">
-                                    <table class="table table-striped-columns table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th><span style="text-decoration:underline;">Key Themes</span></th>
-                                                <th><span style="text-decoration:underline;">Guiding Questions</span></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Firewall<br><br>Routers<br><br>Internet access<br><br>Wi-Fi network<br><br>Cloud services<br><br>Shared Responsibility Model<br><br>Managed Service Provider (MSP)<br><br>Service Level Agreement (SLA)<br><br>Network monitoring</td>
-                                                <td><strong>Is your business network protected by a </strong><a href="https://www.cisa.gov/news-events/news/understanding-firewalls-home-and-small-office-use"><strong>firewall</strong></a><strong> (or a router with firewall capability)? If so:</strong><br><br>-&gt; Have you changed all passwords from the default passwords on your firewalls and internet gateways and are all passwords difficult to guess?<br><br>-&gt; If you thought that passwords had been exposed (i.e. someone who knew your password had left the organisation), would you be aware of this and change the password?<br><br><strong>Do you have any services enabled that can be accessed externally?</strong><br><strong>Can your routers or hardware firewalls be configured remotely over the Internet? If so:</strong><br><br>-&gt; Have you secured the administrator account and passwords and not shared them across the organisation?<br><br><strong>Have you configured your routers or your hardware firewalls to block all other services being advertised to the Internet?</strong><br><br><strong>Do you keep the firmware on your router(s) updated?</strong><br><br><strong>Do you use the services of a third-party Managed Service Provider (MSP) to manage your network and network devices and to monitor the devices and networks for suspicious activity? If so:</strong><br><br>-&gt; Is there an appropriate SLA between you and the MSP?<br><br><strong>Do you use </strong><a href="https://getreadyforcyberessentials.iasme.co.uk/guidance/guidance-about-the-cloud/"><strong>cloud services</strong></a><strong> in your organisation? If so:</strong><br><br>-&gt; Do you have a list of the cloud services you use?&nbsp;<br><br>-&gt; Have you enabled MFA for the administrator and user accounts to access and/or manage the cloud services you use?<br><br>-&gt; Have you located and understood the <a href="https://cloudsecurityalliance.org/blog/2020/08/26/shared-responsibility-model-explained">shared responsibility model</a> for the cloud services you use?&nbsp;<br><br><strong>Do you allow people outside your organisation (e.g. customers, suppliers, etc.) to connect to the same Wi-Fi network that your business assets are connected to? If so:</strong><br><br>-&gt; Have you ensured that the business assets are behind a firewall?&nbsp;</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed bg-warning-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-5" aria-expanded="false" aria-controls="accordion-1 .item-5"><strong>Layer 5: Customers</strong></button></h2>
-                        <div class="accordion-collapse collapse item-5" role="tabpanel" data-bs-parent="#accordion-1">
-                            <div class="accordion-body">
-                                <p class="mb-0" style="padding: 8px;" align="justify">While customers are vital to the financial longevity of your business, they also need to be treated with the utmost care when it comes to your organisation's cyber security. As they are the most important group of people outside the organisation, you should carefully manage the relationship between customers and business assets. On the other hand, although they are external to the organisation, customers need to penetrate the external boundaries of the organisation in a structured way in order to receive services from you.</p>
-                                <div class="table-responsive border-1 border-black">
-                                    <table class="table table-striped-columns table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 125.195px;"><span style="text-decoration:underline;">Key Themes</span></th>
-                                                <th><span style="text-decoration:underline;">Guiding Questions</span></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Privacy<br><br>Wi-Fi network</td>
-                                                <td><strong>Do you collect </strong><a href="https://www.technology.pitt.edu/help-desk/how-to-documents/guide-identifying-personally-identifiable-information-pii"><strong>personally identifiable information</strong></a><strong> (PII) from customers for any purpose (marketing, research, etc.)?</strong><br><br><strong>Do you allow users to create and maintain accounts on your site? If so:</strong><br><br>-&gt; Do you comply with the privacy regulations depending on your jurisdiction (e.g. <a href="https://eur-lex.europa.eu/eli/reg/2016/679">GDPR</a>, <a href="https://www.gov.uk/data-protection">DPA</a>, etc.)?<br><br>-&gt; Do you enforce Multi-Factor Authentication (MFA) for the users?<br><br>-&gt; In the unlikely event of a customer data breach, do you have a process in place to notify and update affected customers?<br><br><strong>Do you allow customers to connect to the same Wi-Fi network that your business assets are connected to? If so:</strong><br><br>-&gt; Have you ensured that the business assets are behind a firewall?<br><br><strong>How do customers interact with your assets, network, employees, and yourself?</strong></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" role="tab"><button class="accordion-button bg-info-subtle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-6" aria-expanded="true" aria-controls="accordion-1 .item-6"><strong>Layer 6: Environment</strong></button></h2>
-                        <div class="accordion-collapse collapse collapse item-6 item-6 item-6" role="tabpanel" data-bs-parent="#accordion-1">
-                            <div class="accordion-body">
-                                <p class="mb-0" style="padding: 8px;" align="justify">The outermost layer refers to the external boundaries of your organisation. So far, all considerations have been about the assets and people that are part of the organisation, including customers as explained in the previous layer. This layer considers all threats and threat actors outside the organisation's perimeter.</p>
-                                <div class="table-responsive border-1 border-black">
-                                    <table class="table table-striped-columns table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th><span style="text-decoration:underline;">Key Themes</span></th>
-                                                <th><span style="text-decoration:underline;">Guiding Questions</span></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Non-organisational<br>people<br><br>Firewall<br><br>Physical security controls<br><br>Fire safety<br><br>Power outage<br><br>Theft</td>
-                                                <td><strong>Do you have a firewall enabled to filter/block incoming external traffic?</strong><br><br><strong>Approximately how many people from outside your organisation, other than customers, visit your workplace (per day/week/month/year)? Think of suppliers, government officials, etc.</strong><br><br>-&gt; Do you keep a record of the non-organisational visitors?<br><br>-&gt; Have you noticed a sudden increase in the number of non-organisational visitors?<br><br>-&gt; Do you allow them to connect to your Wi-Fi network?<br><br><strong>Do you have physical security controls (e.g. cameras, locks, etc.) in place to secure the external perimeter of the organisation?&nbsp;</strong><br><br><strong>Do you have the necessary fire safety measures in place, including smoke detectors and fire extinguishers?&nbsp;</strong><br><br><strong>Do you have uninterruptible power supplies (UPS) in place to keep critical equipment running and prevent data loss in the event of a power outage?&nbsp;</strong></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>    
             </div>
         </div>
     </section>
