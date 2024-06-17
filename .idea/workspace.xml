@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Final version">
+    <list default="true" id="6cd7d8b6-958e-4a4f-94d0-5c2017e1e097" name="Changes" comment="Fixed responsiveness issues.">
       <change afterPath="$PROJECT_DIR$/venv/bin/Activate.ps1" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/bin/activate" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/bin/activate.csh" afterDir="false" />
@@ -8582,12 +8582,7 @@
       <change afterPath="$PROJECT_DIR$/venv/share/man/man1/qr.1" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/share/man/man1/svg2pdf.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/complete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seance/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/questions.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/questions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seance/templates/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/seance/templates/start.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -8736,7 +8731,7 @@
       <workItem from="1716556050778" duration="683000" />
       <workItem from="1716760242943" duration="8707000" />
       <workItem from="1717677564301" duration="620000" />
-      <workItem from="1718564763630" duration="9827000" />
+      <workItem from="1718564763630" duration="17160000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -8874,7 +8869,31 @@
       <option name="project" value="LOCAL" />
       <updated>1718564816666</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fixed responsiveness issues.">
+      <option name="closed" value="true" />
+      <created>1718607063935</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718607063935</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fixed responsiveness issues.">
+      <option name="closed" value="true" />
+      <created>1718612410829</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718612410829</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fixed responsiveness issues.">
+      <option name="closed" value="true" />
+      <created>1718615845190</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1718615845190</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -8905,6 +8924,7 @@
     <MESSAGE value="Docstrings added." />
     <MESSAGE value="Tests added." />
     <MESSAGE value="Final version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final version" />
+    <MESSAGE value="Fixed responsiveness issues." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed responsiveness issues." />
   </component>
 </project>
